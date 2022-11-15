@@ -1,0 +1,15 @@
+th {
+    color: rgb(209 213 219);
+    padding: 3px 4px 3px 4px;
+}
+tr {
+    background-color: rgb(31 41 55);
+}
+thead {
+    justify-content: between;
+}
+.main-div {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}

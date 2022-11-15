@@ -1,0 +1,54 @@
+input {
+    width: 100%;
+    padding: 3px 1px 3px 1px;
+    margin: 1px 0px 1px 0px;
+    color: rgb(31 41 55);;
+    appearance: none;
+    border-width: 2px;
+    border-color: rgb(243 244 246);
+}
+input:focus {
+    color: rgb(107 114 128);
+    outline: none;
+    border-color: rgb(229 231 235);
+}
+#main-info {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    margin: 5px 0px 2px 0px;
+    text-align: center;
+}
+form {
+    margin-top: 3px;
+}
+.label {
+    width: 100%;    /* w-fukk */
+    flex: 1 1 0%;   /* flex-1 */
+    margin: 0px 2px 0px 20px;   /* mx-2 */
+    font-size: 0.75rem; /* text-xs */
+    line-height: 1rem;  /* text-xs */ 
+    font-weight: 600;   /* font-semibold */
+    border-color: rgb(75 85 99);    /* 600 */
+    text-transform: uppercase;  /* uppercase */
+}
+#saveBtn-div {
+    text-align: center;
+}
+#saveBtn {
+    background-color: rgb(96 165 250); /* bg-blue-400*/
+    padding: 2px 10px 2px 10px;   /* py-2 px-10 */
+    text-align: center; /* text-center */
+    color: white;   /* text-white */
+    border-radius: 0.25rem; /* rounded */ /* 4px */
+    /* md: px-12 md: py-3 md: text-base mt-4 */
+}
+#main-label-div {
+    display: flex;  /* flex */
+    flex-direction: column; /* flex-col */
+
+}
+#sub-label-div {
+    display: flex;  /* flex */
+    flex-direction: column; /* flex-col */
+}

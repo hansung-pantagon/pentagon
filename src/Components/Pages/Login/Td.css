@@ -1,0 +1,21 @@
+tr {
+    background-color: white;
+    border-width: 2px;
+    border-color: rgb(229 231 235)
+}
+.item {
+    padding: 3px 4px 3px 4px;
+    background-color: white;
+}
+#edit {
+    text-align: center;
+    color: rgb(184, 139, 229);
+    cursor: pointer;
+    background-color: white;
+}
+#remove {
+    text-align: center;
+    color: rgb(192 132 252);
+    cursor: pointer;
+    background-color: white;
+}
