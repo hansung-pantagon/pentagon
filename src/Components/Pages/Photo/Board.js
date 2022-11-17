@@ -67,18 +67,12 @@ const Board = () => {
             setInfo( info => info.concat({
                     id: nextId.current,
                     // postInfo: {
-                    postId: data.postId,    // postId
+                    postId,    // postId: data.postId
                     // like: data.like,
                     // private: data.private,
-                    content: data.content,
+                    content,
                     // imgUrl: data.imgUrl,
                     // dateAt: data.dateAt
-                    // }
-                    // name: data.name,
-                    // username: data.username,
-                    // phone: data.phone,
-                    // boy: {
-                    //     birthday: data.boy.birthday,
                     // }
                 }))
                 data.id = nextId.current;
