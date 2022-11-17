@@ -26,16 +26,6 @@ const Post = ({ onSaveData }) => {
         })
     };
 
-    // const storeLocal = (key, data) => {
-    //     postArray = JSON.parse(window.localStorage.getItem(key));
-    //     // localStorage에 매개변수로 받은 key가 없으면 새로운 배열을 만들어서 추가
-    //     if (!postArray) {
-    //         postArray = [];
-    //     }
-    //     postArray.push(data);
-    //     console.log(data);
-    //     window.localStorage.setItem(key, JSON.stringify(postArray));
-    // }
 
     // form의 onSubmit 이벤트를 handleSubmit 함수로 넘기고, 상위의 onSaveData 함수에 입력된 form 객체를 전달한다.
     const handleSubmit = (e) => {
@@ -79,8 +69,8 @@ const Post = ({ onSaveData }) => {
                     </label> */}
                 </div>
 
-                <div className="sub-label-div">
-                    <label className="label" htmlFor="content">content
+                <div class="sub-label-div">
+                    <label class="label" htmlFor="content">content
                         <input 
                             required placeholder='게시글 내용을 입력해주세요' type='text' name='content'
                             value={form.content} onChange={handleChange} />
