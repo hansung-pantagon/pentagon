@@ -1,11 +1,12 @@
-import Main from './Components/Pages/Main/main';
+//import Main from './Components/Pages/Main/main';
 import './App.css';
-import Login from './Components/Pages/Login/login/login';
+//import Login from './Components/Pages/Login/login/login';
+import Board from './Components/Pages/Photo/Board';
 
 function App() {
   return (
     <>
-      <Login></Login>
+      <Board></Board>
     </>
   );
 }

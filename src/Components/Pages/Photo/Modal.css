@@ -1,0 +1,12 @@
+#a {
+    height: 100vh;  /* h-screen */
+    width: 100%;    /* w-full */
+    position: fixed;    /* fixed */
+    left: 0px;  /* left-0 */
+    top: 0px;   /* top-0 */
+    display: flex;  /* flex */
+    justify-content: center;    /* justify-center */
+    align-items: center;    /* items-center */
+    background-color: black;    /* bg-black */
+    opacity: 0.7;   /* bg-opacity-70 */
+}
