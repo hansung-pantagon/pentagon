@@ -10,21 +10,29 @@ import './Board.css'
  * 
  */
 // 이미지 ex-> proj -> ex08-04-2/App.js 참고
+const getData = window.localStorage.getItem("post");
+
+// const getObj = (arr, key) => {
+//     const obj = arr.filter(item.id === key)[0];
+//     return obj;
+// }
+
 
 const Board = () => {
     const [info, setInfo] = useState([]);   // info: 전체 데이터 배열
     const [selected, setSelected] = useState("");
     const [modalOn, setModalOn] = useState(false);
+    // const [likeValue, setLikeValue] = useState(JSON.parse(localData));
 
     // 고유 값으로 사용될 id
     // ref를 사용하여 변수 담기
-    let postsLength = !!window.localStorage.getItem("post") ? JSON.parse(window.localStorage.getItem("post")).length : 0;
+    const postsLength = !!getData ? JSON.parse(getData).length : 0;
 
     const nextId = useRef(postsLength + 1);
 
     // 데이터 호출
     useEffect(() => {
-        let post = JSON.parse(window.localStorage.getItem("post"));   // 데이터 배열이 전달되도록
+        let post = JSON.parse(getData);   // 데이터 배열이 전달되도록
         console.log(post);
         if (!post) {
             post = [];
@@ -52,8 +60,10 @@ const Board = () => {
     const handleSave = (data) => {
         console.log(data);
         console.log(data.id);
+        console.log(data.imgUrl);
         // destructing assignment(구조분해할당) 
-        const { postId, content } = data;
+        const { postId, content, imgUrl } = data;
+        console.log(imgUrl);
 
         // 데이터 수정하기
         if (data.id) {
@@ -66,13 +76,14 @@ const Board = () => {
                     postId,
                     // like: data.postInfo.like,
                     // private: data.postInfo.private,
+                    imgUrl, // imgUrl: data.postInfo.imgUrl,
                     content,
-                    // imgUrl: data.postInfo.imgUrl,
                     // dateAt: data.postInfo.dateAt
                     // },
                 } : row))
         } else {
             console.log(info);
+            
             // 데이터 추가하기, info는 전체 데이터 배열
             setInfo( info => info.concat({
                     id: nextId.current,
@@ -80,8 +91,8 @@ const Board = () => {
                     postId,    // postId: data.postId
                     // like: data.like,
                     // private: data.private,
+                    imgUrl, // imgUrl: data.imgUrl,
                     content,
-                    // imgUrl: data.imgUrl,
                     // dateAt: data.dateAt
                     // }
                 }))
@@ -96,7 +107,7 @@ const Board = () => {
     }
 
     const handleEdit = item => {
-        const { id, postId, content } = item;
+        const { id, postId, content, imgUrl } = item;
         setModalOn(true);
         const selectedData = {
             id, // id: item.id
@@ -104,8 +115,8 @@ const Board = () => {
             postId,
             // like: item.postInfo.like,
             // private: item.postInfo.like,
+            imgUrl, // imgUrl: item.postInfo.imgUrl,
             content,
-            // imgUrl: item.postInfo.imgUrl,
             // dateAt: item.postInfo.dateAt,
             // }
         };
@@ -133,9 +144,9 @@ const Board = () => {
                         <th>postId.</th>
                         {/* <th>like</th> */}
                         {/* <th>private</th> */}
+                        <th>imgUrl</th>
                         <th>content</th>
-                        {/* <th>imgUrl</th>
-                        <th>dateAt</th> */}
+                        {/* <th>dateAt</th> */}
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>

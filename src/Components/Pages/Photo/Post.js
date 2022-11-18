@@ -1,52 +1,52 @@
 import './Post.css';
 import React, { useState } from "react";
+import { GrGallery } from "react-icons/gr"
 
 const Post = ({ onSaveData }) => {
     const [form, setForm] = useState({
-        // name: "",
-        // username: "",
-        // phone: "",
-
         id: "", // 사용자 id
         postId: "", // 게시글 번호
-        // like: "",       // 해당 게시글 좋아요 수
+        // like: 0,
         // private: true,    // default: true
+        imgUrl: "",
         content: "",    // 게시글 내용
-        // imgUrl
         // dateAt: ""  // 데이트 한 날짜
     });
 
-    // let postArray = [];
+    const imgInfo = document.getElementById("input-file");
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+        const files = e.target.files;
+
         setForm({
             ...form,
+            "imgUrl": () => {
+                URL.createObjectURL(files[0]);
+            },
             [name]: value   // objectName[“keyName”] = value objectName 객체에 keyname(key), value(value)를 추가
         })
     };
 
-
     // form의 onSubmit 이벤트를 handleSubmit 함수로 넘기고, 상위의 onSaveData 함수에 입력된 form 객체를 전달한다.
     const handleSubmit = (e) => {
+        console.log(form.imgUrl);
+        form.imgUrl = URL.createObjectURL(imgInfo.files[0])
         e.preventDefault();
         onSaveData(form);
         console.log(`Post handleSubmit: ${form}`);
         console.log(form);
+        
         // storeLocal("post", form);
         console.log(window.localStorage.getItem("post"));
         setForm({
             id: "",
             postId: "", // 게시글 번호
-            // like: "",       // 해당 게시글 좋아요 수
+            // like: null,       // 해당 게시글 좋아요 수
             // private: true,    // default: true
+            imgUrl: "",
             content: "",    // 게시글 내용
-            // imgUrl
             // dateAt: ""  // 데이트 한 날짜
-            
-            // name: "",
-            // username: "",
-            // phone: "",
         })
     }
 
@@ -61,19 +61,37 @@ const Post = ({ onSaveData }) => {
                             required placeholder="postId를 입력해주세요" type="text" name="postId"
                             value={form.postId} onChange={handleChange} />
                     </label>
-
-                    {/* <label class="label" htmlFor="username">Username
-                        <input 
-                            required placeholder="유저네임을 입력해주세요" type="username" name="username"
-                            value={form.username} onChange={handleChange} />
-                    </label> */}
                 </div>
+                <br />
+                <br />
 
-                <div class="sub-label-div">
-                    <label class="label" htmlFor="content">content
+                <div className="sub-label-div">
+                    <label
+                        className="OOTDWrite-input-file"
+                        htmlFor="input-file"
+                    >
+                        <GrGallery />
+                        Add photo
                         <input 
-                            required placeholder='게시글 내용을 입력해주세요' type='text' name='content'
-                            value={form.content} onChange={handleChange} />
+                            type='file'
+                            multiple='multiple'
+                            id="input-file"
+                            name="imgUrl"
+                            // style={{ display: 'none'}}
+                            accept=".jpg, .jpeg, .png" 
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <br />
+                    <br />
+                    <label className="label" htmlFor="content">content
+                        <input 
+                            required
+                            placeholder='게시글 내용을 입력해주세요'
+                            type='text'
+                            name='content'
+                            value={form.content}
+                            onChange={handleChange} />
                     </label>
                 </div>
 

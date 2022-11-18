@@ -27,8 +27,8 @@ const Td = ({ item, handleRemove, handleEdit }) => {    // item는 게시글 정
             <td className="item">{postId}</td>
             {/* <td class="item">{item.postInfo.like}</td> */}
             {/* <td class="item">{item.postInfo.private}</td> */}
+            <td className="item"><img src={item.imgUrl} /></td>
             <td className="item">{content}</td>
-            {/* <td class="item">{item.postInfo.imgUrl}</td> */}
             {/* <td class="item">{dateAt}</td> */}
             <td id="edit" onClick={onEdit}>
                 <FaUserEdit />
