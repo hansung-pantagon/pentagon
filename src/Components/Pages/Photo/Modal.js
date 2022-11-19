@@ -30,7 +30,7 @@ const Modal = ({ selectedData, handleCancel, handleEditSubmit }) => {
                 </div>
                 <form onSubmit={onSubmitEdit}>
                     <div className="p-3">
-                        <div>ID: {edited.id}</div>
+                        <div>POST_ID: {edited.id}</div>
                         {/* <div>Name: <input type='text' name='name' 
                         value={edited.name} onChange={onEditChange} /></div> */}
                         <div>Content: <input type='text' name='content' 

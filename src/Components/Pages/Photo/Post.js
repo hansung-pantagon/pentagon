@@ -30,15 +30,12 @@ const Post = ({ onSaveData }) => {
 
     // form의 onSubmit 이벤트를 handleSubmit 함수로 넘기고, 상위의 onSaveData 함수에 입력된 form 객체를 전달한다.
     const handleSubmit = (e) => {
-        console.log(form.imgUrl);
-        form.imgUrl = URL.createObjectURL(imgInfo.files[0])
+        if (!!form.imgUrl) {
+            form.imgUrl = URL.createObjectURL(imgInfo.files[0]);
+        }
         e.preventDefault();
         onSaveData(form);
-        console.log(`Post handleSubmit: ${form}`);
-        console.log(form);
         
-        // storeLocal("post", form);
-        console.log(window.localStorage.getItem("post"));
         setForm({
             id: "",
             postId: "", // 게시글 번호
@@ -56,15 +53,13 @@ const Post = ({ onSaveData }) => {
             <br />
             <form onSubmit={handleSubmit}>
                 <div id="main-label-div">
-                    <label className="label" htmlFor="postId">postId
+                    <label className="label" htmlFor="id">Id
                         <input 
-                            required placeholder="postId를 입력해주세요" type="text" name="postId"
-                            value={form.postId} onChange={handleChange} />
+                            required placeholder="id를 입력해주세요" type="text" name="id"
+                            value={form.id} onChange={handleChange} />
                     </label>
                 </div>
                 <br />
-                <br />
-
                 <div className="sub-label-div">
                     <label
                         className="OOTDWrite-input-file"
@@ -74,7 +69,6 @@ const Post = ({ onSaveData }) => {
                         Add photo
                         <input 
                             type='file'
-                            multiple='multiple'
                             id="input-file"
                             name="imgUrl"
                             // style={{ display: 'none'}}
@@ -82,7 +76,6 @@ const Post = ({ onSaveData }) => {
                             onChange={handleChange}
                         />
                     </label>
-                    <br />
                     <br />
                     <label className="label" htmlFor="content">content
                         <input 

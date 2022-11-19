@@ -12,7 +12,7 @@ const Td = ({ item, handleRemove, handleEdit }) => {    // item는 게시글 정
     const { id, postId, content } = item;
     // 데이터 삭제
     const onRemove = () => {
-        handleRemove(item.id);
+        handleRemove(item.postId);  // postId
     }
 
     // 데이터 편집
@@ -27,7 +27,7 @@ const Td = ({ item, handleRemove, handleEdit }) => {    // item는 게시글 정
             <td className="item">{postId}</td>
             {/* <td class="item">{item.postInfo.like}</td> */}
             {/* <td class="item">{item.postInfo.private}</td> */}
-            <td className="item"><img src={item.imgUrl} /></td>
+            <td className="item" alt=""><img src={item.imgUrl} /></td>
             <td className="item">{content}</td>
             {/* <td class="item">{dateAt}</td> */}
             <td id="edit" onClick={onEdit}>

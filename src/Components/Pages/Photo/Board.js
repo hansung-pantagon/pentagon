@@ -9,14 +9,7 @@ import './Board.css'
  * 
  * 
  */
-// 이미지 ex-> proj -> ex08-04-2/App.js 참고
 const getData = window.localStorage.getItem("post");
-
-// const getObj = (arr, key) => {
-//     const obj = arr.filter(item.id === key)[0];
-//     return obj;
-// }
-
 
 const Board = () => {
     const [info, setInfo] = useState([]);   // info: 전체 데이터 배열
@@ -24,16 +17,15 @@ const Board = () => {
     const [modalOn, setModalOn] = useState(false);
     // const [likeValue, setLikeValue] = useState(JSON.parse(localData));
 
-    // 고유 값으로 사용될 id
-    // ref를 사용하여 변수 담기
-    const postsLength = !!getData ? JSON.parse(getData).length : 0;
+    // getData가 null(아무것도 들어가지 않은 상태)이거나 빈 배열(다 삭제된 상태) 생각
+    const nowPostId = (!getData || getData === "[]") ? 0 : JSON.parse(getData).at(-1).postId;
 
-    const nextId = useRef(postsLength + 1);
+    // ref를 사용하여 변수 담기
+    const nextPostId = useRef(nowPostId + 1);   
 
     // 데이터 호출
     useEffect(() => {
         let post = JSON.parse(getData);   // 데이터 배열이 전달되도록
-        console.log(post);
         if (!post) {
             post = [];
         }
@@ -51,44 +43,40 @@ const Board = () => {
         }
         // 가져온 배열에 데이터 추가
         postArray.push(data);
-        console.log(data);
+
         // 데이터를 추가한 배열을 다시 localStorage에 저장
         window.localStorage.setItem(key, JSON.stringify(postArray));
     }
 
     // 데이터를 수정 또는 추가해서 info 변경 -> 리렌더링
     const handleSave = (data) => {
-        console.log(data);
-        console.log(data.id);
-        console.log(data.imgUrl);
         // destructing assignment(구조분해할당) 
-        const { postId, content, imgUrl } = data;
-        console.log(imgUrl);
+        const { id, content, imgUrl } = data;
 
         // 데이터 수정하기
-        if (data.id) {
-            console.log("data.id 있음");
-            setInfo (
-                // 수정하는 경우 같은 id 찾고 수정하는 내용이 다르면 수정하고 저장..
-                info.map(row => data.id === row.id ? {
-                    id: data.id,
+        if (data.postId) {  // postId
+            const editArray = JSON.parse(getData).map(row => data.postId === row.postId ? {
+                postId: data.postId,
                     // postInfo: {
-                    postId,
+                    id,
                     // like: data.postInfo.like,
                     // private: data.postInfo.private,
                     imgUrl, // imgUrl: data.postInfo.imgUrl,
                     content,
                     // dateAt: data.postInfo.dateAt
                     // },
-                } : row))
+                } : row)
+            setInfo (editArray)
+            console.log(editArray);
+            window.localStorage.setItem("post", JSON.stringify(editArray));
         } else {
             console.log(info);
             
             // 데이터 추가하기, info는 전체 데이터 배열
             setInfo( info => info.concat({
-                    id: nextId.current,
+                    postId: nextPostId.current,
                     // postInfo: {
-                    postId,    // postId: data.postId
+                    id,    // postId: data.postId
                     // like: data.like,
                     // private: data.private,
                     imgUrl, // imgUrl: data.imgUrl,
@@ -96,23 +84,29 @@ const Board = () => {
                     // dateAt: data.dateAt
                     // }
                 }))
-                data.id = nextId.current;
-                storeLocal("post", data);
-            nextId.current += 1;
+            data.postId = nextPostId.current;
+            storeLocal("post", data);
+            nextPostId.current += 1;
         }
     }
 
-    const handleRemove = id => {
-        setInfo(info => info.filter(item => item.id !== id));
+    const handleRemove = postId => {
+        postArray = JSON.parse(getData);   
+        // localStorage에 매개변수로 받은 key가 없으면 새로운 배열을 만들어서 추가
+        if (!postArray) { return; }
+
+        const updateData = postArray.filter(item => item.postId !== postId);
+        window.localStorage.setItem("post", JSON.stringify(updateData));
+        setInfo(updateData);
     }
 
     const handleEdit = item => {
         const { id, postId, content, imgUrl } = item;
         setModalOn(true);
         const selectedData = {
-            id, // id: item.id
+            postId, // id: item.id
             // postInfo: {
-            postId,
+            id,
             // like: item.postInfo.like,
             // private: item.postInfo.like,
             imgUrl, // imgUrl: item.postInfo.imgUrl,
@@ -140,11 +134,11 @@ const Board = () => {
             <table>
                 <thead>
                     <tr>
-                        <th>Id.</th>
-                        <th>postId.</th>
+                        <th>Writer</th>
+                        <th>postId</th>
                         {/* <th>like</th> */}
                         {/* <th>private</th> */}
-                        <th>imgUrl</th>
+                        <th>img</th>
                         <th>content</th>
                         {/* <th>dateAt</th> */}
                         <th>Edit</th>
