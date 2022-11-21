@@ -1,8 +1,10 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import "./login.css";
+import { Route, Routes } from "react-router-dom";
+import "./signUpInPage.css";
+import Login from "./login";
+import SignUp from "./signUp";
 
-function Login() {
+function SignUpIn() {
   return (
     <>
       <div className="background">
@@ -69,16 +71,14 @@ function Login() {
           </div>
         </div>
         <div className="right-box">
-          <div className="login-box">
-            <div>로그인</div>
-            <input type="text" placeholder="아이디"></input>
-            <input type="text" placeholder="비밀번호"></input>
-            <button>로그인</button>
-          </div>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="signup" element={<SignUp />} />
+          </Routes>
         </div>
       </div>
     </>
   );
 }
 
-export default Login;
+export default SignUpIn;

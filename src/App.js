@@ -1,12 +1,19 @@
-import Main from './Components/Pages/Main/main';
-import './App.css';
-import Login from './Components/Pages/Login/login/login';
-import Home from './Home'
+import Main from "./Components/Pages/Main/main";
+import "./App.css";
+import Home from "./Home";
+import SignUpInPage from "./Components/Pages/Login/signUpInPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 function App() {
   return (
-    <>
-      <Home></Home>
-    </>
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signUpInPage/*" element={<SignUpInPage />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
