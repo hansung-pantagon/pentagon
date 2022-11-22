@@ -137,32 +137,39 @@ body{
 .userImg-container{
     text-align: center;
     margin:10%;
-}
-
-.userImg{
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items:center;
 }
 
-.userImg-container > .connect{
+.userImg{
+    text-align: center;
+    
+}
+.connect-container{
+    display: grid;
+    place-items: center;
+  
+}
+
+.userImg > .connect-container > .connect{
     width:1em;
     height:1em;
     margin:5%;
     border-radius: 50%;
     background-color:#D9D9D9;
     
+    
 }
 
 .boyImg{
     width:10em;
-    height:10em;
+    height:11em;
     background-color:#D9D9D9;
 }
 
 .girlImg{
     width:10em;
-    height:10em;
+    height:11em;
     background-color:#D9D9D9;
 }

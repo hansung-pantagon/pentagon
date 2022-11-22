@@ -1,13 +1,8 @@
 import React from 'react';
 import './Home.css';
-import { Route, Routes } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import {Link} from "react-router-dom";
-import Main from './Components/Pages/Main/main'
-import Photo from './Components/Pages/Photo/post/post'
-import Friend from './Components/Pages/Friend/searchFriend'
-import Anniversary from './Components/Pages/Anniversary/anniversary'
-import Setting from './Components/Pages/Setting/editUserInformation'
+
 
 const Home = () => {
     return (
@@ -22,11 +17,13 @@ const Home = () => {
                             
                             <div className="userImg-container">
                                 <div className="userImg">
-                                    <div className="boyImg">sdf</div>
-                                    <div className="connect"></div>
-                                    <div className="connect"></div>
-                                    <div className="connect"></div>
-                                    <div className="girlImg">dddd</div>
+                                    <div className="boyImg">남자 이미지 가져오기</div>
+                                    <div className="connect-container">
+                                        <div className="connect"></div>
+                                        <div className="connect"></div>
+                                        <div className="connect"></div>
+                                    </div>
+                                    <div className="girlImg">여자 이미지 가져오기</div>
                                 </div>
                             </div>
 
