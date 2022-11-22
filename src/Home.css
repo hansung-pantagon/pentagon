@@ -133,3 +133,28 @@ body{
     
 }
 
+/*유저 사진*/
+.userImg-container{
+    text-align: center;
+    margin:10%;
+}
+
+.userImg-container > .connect{
+    width:1em;
+    height:1em;
+    margin:5%;
+    border-radius: 50%;
+    background-color:#D9D9D9;
+}
+
+.boyImg{
+    width:10em;
+    height:10em;
+    background-color:#D9D9D9;
+}
+
+.girlImg{
+    width:10em;
+    height:10em;
+    background-color:#D9D9D9;
+}
