@@ -1,5 +1,6 @@
 import React from 'react';
-import './Home.css'
+import './Home.css';
+import {Link} from "react-router-dom";
 
 const Home = () => {
     return (
@@ -28,11 +29,11 @@ const Home = () => {
 
                     <div className="menu">
                         <div className="menu-container">
-                            <a href="##">메인</a>
-                            <a href="##">사진</a>
-                            <a href="##">친구</a>
-                            <a href="##">기념일</a>
-                            <a href="##">설정</a>
+                            <Link to="/">메인</Link>
+                            <Link to="/photo">사진</Link>
+                            <Link to="/friend">친구</Link>
+                            <Link to="/anniversary">기념일</Link>
+                            <Link to="/setting">설정</Link>
                         </div>
                     </div>
                 </div>
