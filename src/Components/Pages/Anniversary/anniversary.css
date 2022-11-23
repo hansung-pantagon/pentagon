@@ -1,0 +1,236 @@
+.background{
+    position: absolute;
+    width: 800px;
+    height: 604px;
+    left: 388px;
+    top: 221px;
+
+    background: #EFEFEF;
+    border-radius: 30px;
+  }
+  
+.whitebox{
+    position: absolute;
+    width: 545px;
+    height: 572px;
+    left: 519px;
+    top: 238px;
+
+    background: #FFFFFF;
+    border-radius: 20px;
+  }
+  
+.heart{
+    position: absolute;
+    width: 34.1px;
+    height: 35px;
+    left: 771px;
+    top: 275px;
+
+    background: url(icons8-하트-48.png);
+  }
+
+.firstday{
+    position: absolute;
+    width: 197px;
+    height: 80px;
+    left: 694px;
+    top: 330px;
+
+    font-family: "DungGeunMo";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #000000;
+
+}  
+
+.leftday1{
+    position: absolute;
+    width: 137px;
+    height: 44px;
+    left: 536px;
+    top: 475px;
+
+    font-family: "DungGeunMo";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    
+    color: #000000;
+}
+
+.leftday2{
+    position: absolute;
+    width: 137px;
+    height: 44px;
+    left: 536px;
+    top: 530px;
+
+    font-family: "DungGeunMo";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.leftday3{
+  position: absolute;
+  width: 137px;
+  height: 44px;
+  left: 536px;
+  top: 585px;
+
+  font-family: "DungGeunMo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.leftday4{
+  position: absolute;
+  width: 137px;
+  height: 44px;
+  left: 536px;
+  top: 641px;
+
+  font-family: "DungGeunMo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.rightday1{
+    position: absolute;
+    width: 162px;
+    height: 44px;
+    left: 860px;
+    top: 451px;
+
+    font-family: "DungGeunMo";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.rightday2{
+    position: absolute;
+    width: 162px;
+    height: 44px;
+    left: 860px;
+    top: 506px;
+
+    font-family: "DungGeunMo";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.rightday3{
+  position: absolute;
+  width: 162px;
+  height: 44px;
+  left: 860px;
+  top: 561px;
+
+  font-family: "DungGeunMo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.rightday4{
+  position: absolute;
+  width: 162px;
+  height: 44px;
+  left: 860px;
+  top: 615px;
+
+  font-family: "DungGeunMo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.line1{
+    position: absolute;
+    width: 518.02px;
+    height: 0px;
+    left: 531.99px;
+    top: 514px;
+  
+    border: 1px solid #616161;
+  }
+  
+.line2{
+    position: absolute;
+    width: 518.02px;
+    height: 0px;
+    left: 531.99px;
+    top: 569px;
+  
+    border: 1px solid #616161;
+  }
+  
+.line3{
+    position: absolute;
+    width: 518.02px;
+    height: 0px;
+    left: 531.99px;
+    top: 624px;
+  
+    border: 1px solid #616161;
+  
+  }
+  
+.line4{
+    position: absolute;
+    width: 518.02px;
+    height: 0px;
+    left: 531.99px;
+    top: 679px;
+  
+    border: 1px solid #616161;
+  }
+  
+.line5{
+    position: absolute;
+    width: 518.02px;
+    height: 0px;
+    left: 531.99px;
+    top: 734px;
+  
+    border: 1px solid #616161;
+  }

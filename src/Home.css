@@ -1,0 +1,175 @@
+
+body{
+    background-color: #b0b0b0;
+    background-image: url(./image/home/pattern.png);
+    background-size: 100px;
+    font-size: 24;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    
+}
+
+.bookcover{
+    width: 96.5vmin;
+    height: 66vmin;
+    position: relative;
+    margin: 100px auto;
+}
+
+
+.bookcover-left {
+    width: 32vmin;
+    height: 66vmin;
+    background-color: #47ACC2;
+    border: 1px solid #47ACC2;
+    border-radius: 10px;
+    float:left;
+}
+
+.bookcover-right {
+    width: 64vmin;
+    height: 66vmin;
+    background-color: #47ACC2;
+    border: 1px solid #47ACC2;
+    border-radius: 10px;
+    float:right;
+}
+
+.bookcover-left-dot{
+    width:95%;
+    height:95%;
+    border: 1px dashed #FFFFFFFF;
+    border-radius: 10px;
+    margin-top:5%;
+    float:right;
+}
+
+.bookcover-right-dot{
+    width:95%;
+    height:95%;
+    border: 1px dashed #FFFFFFFF;
+    border-radius: 10px;
+    margin-top:2.5%;
+    float:left;
+}
+
+.bookcover-left-white{
+    width:95%;
+    height:95%;
+    background-color: #FFFFFFFF;
+    border: 1px solid #FFFFFFFF;
+    border-radius: 10px;
+    margin-top:5%;
+    float:right;
+    flex:0.25;
+}
+
+.bookcover-right-white{
+    width:89%;
+    height:95%;
+    background-color: #FFFFFFFF;
+    border: 1px solid #FFFFFFFF;
+    border-radius: 10px;
+    margin-top:2.5%;
+    float:left;
+    flex:0.65;
+}
+
+.menu{
+    float:left;
+    left:top;
+    position: relative;
+    right:-1px;
+}
+.menu-container{
+    width: 6vmin;
+    flex:0.1;  
+}
+
+
+
+.couple-name{
+    font-size: 1rem;
+    margin-top:2%;
+    margin-left:5%;
+}
+
+.bookcover-left-content{
+    width:90%;
+    height:90%;
+    background-color: #EFEFEF;
+    border: 1px solid #EFEFEF;
+    border-radius: 10px;
+    margin-top:15%;
+    float:right;
+}
+
+.bookcover-right-content{
+    width:90%;
+    height:90%;
+    background-color: #EFEFEF;
+    border: 1px solid #EFEFEF;
+    border-radius: 10px;
+    margin-top:3%;
+    
+}
+
+.menu-container a:first-child {
+    margin-top: 60px;
+}
+
+.menu-container a {
+    display: inline-block;
+    width: 100%;
+    padding: 5px 0 5px 5px;
+    border: 1px solid #5d53a8;
+    border-radius: 0 5px 5px 0;
+    background-color: #298FA6;
+    color: white;
+    text-decoration-line: none;
+    margin-bottom: 10px;
+    
+}
+
+/*유저 사진*/
+.userImg-container{
+    text-align: center;
+    margin:10%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.userImg{
+    text-align: center;
+    
+}
+.connect-container{
+    display: grid;
+    place-items: center;
+  
+}
+
+.userImg > .connect-container > .connect{
+    width:1em;
+    height:1em;
+    margin:5%;
+    border-radius: 50%;
+    background-color:#D9D9D9;
+    
+    
+}
+
+.boyImg{
+    width:10em;
+    height:11em;
+    background-color:#D9D9D9;
+}
+
+.girlImg{
+    width:10em;
+    height:11em;
+    background-color:#D9D9D9;
+}
