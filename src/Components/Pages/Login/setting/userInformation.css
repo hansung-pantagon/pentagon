@@ -1,0 +1,57 @@
+.setting-div {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 550px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 30%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.setting-title {
+  margin: 25px;
+  text-align: center;
+}
+.boy-div,
+.girl-div {
+  display: flex;
+}
+.boy,
+.girl {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boy-input-div,
+.girl-input-div {
+  width: 70%;
+}
+.last-input-div {
+  margin-left: 30%;
+}
+
+.boy-input-div > input,
+.girl-input-div > input,
+.last-input-div > input {
+  font-family: "DungGeunMo";
+  border: 1px solid #d9d9d9;
+  -webkit-filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+  width: 300px;
+  margin: 20px 0px 0px 0px;
+  height: 40px;
+}
+.setting-bt {
+  text-align: center;
+  font-family: "DungGeunMo";
+  background: #d9d9d9;
+  border-radius: 10px;
+  border: 0;
+  margin: 40px 150px 0px 150px;
+  height: 40px;
+}
