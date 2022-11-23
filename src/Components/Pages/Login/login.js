@@ -28,11 +28,11 @@ function Login() {
 
   return (
     <>
-      <form className="login-box" onSubmit={checkIdPw}>
+      <form className="login-div" onSubmit={checkIdPw}>
         <div>로그인</div>
         <input type="text" name="id" placeholder="아이디" required minLength={1}></input>
         <input type="password" name="pw" placeholder="비밀번호" required minLength={1}></input>
-        <div>
+        <div className="login-bt-div">
           <button type="submit" className="login-bt">
             로그인
           </button>

@@ -1,4 +1,4 @@
-.signup-box {
+.signup-div {
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -12,10 +12,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.signup-box > div {
+.signup-div > div {
   padding: 50px;
 }
-.signup-box > input {
+.signup-div > input {
   font-family: "DungGeunMo";
   border: 1px solid #d9d9d9;
   -webkit-filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
@@ -24,19 +24,11 @@
   margin: 20px 50px 0px 50px;
   height: 40px;
 }
-.signup-box > button {
+.signup-div > button {
   font-family: "DungGeunMo";
   background: #d9d9d9;
   border-radius: 10px;
   border: 0;
   margin: 40px 115px 0px 130px;
-  height: 40px;
-}
-button {
-  font-family: "DungGeunMo";
-  background: #d9d9d9;
-  border-radius: 10px;
-  border: 0;
-  width: 130px;
   height: 40px;
 }

@@ -113,11 +113,11 @@ function SignUp() {
 
   return (
     <>
-      <form className="signup-box" onSubmit={handleSubmit}>
+      <form className="signup-div" onSubmit={handleSubmit}>
         <div>회원가입</div>
         <input type="text" name="id" value={forms.id} onChange={handleChange} placeholder="아이디" required minLength={1}></input>
         <input type="password" name="pw" value={forms.pw} onChange={handleChange} placeholder="비밀번호" required minLength={1}></input>
-        <div>
+        <div className="signup-bt-div">
           <button type="submit" className="signup-bt">
             회원가입
           </button>
