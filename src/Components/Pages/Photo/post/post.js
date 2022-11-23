@@ -30,7 +30,7 @@ const post = () => {
                     </div>
                 </div>
                 <Link to="/home/photo/writePost">
-                    <div className="post-grid"><img className="addButton" src={AddButton}></img></div>
+                    <div className="post-grid"><div className="addButtonDiv"><img className="addButton" src={AddButton}></img></div></div>
                 </Link>
             </div>
             

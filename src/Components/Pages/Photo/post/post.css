@@ -1,6 +1,7 @@
 .post-container{
     text-align: center;
-    margin:10%;
+    margin:5%;
+    
 }
 
 .post{
@@ -12,12 +13,22 @@
 .addButton{
     width:50%;
     height:50%;
+    
 }
 
 .post-grid{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin:3%;
+}
+
+.addButtonDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:300px;
+    height:160px;
 }
 
 .post-content-container{
