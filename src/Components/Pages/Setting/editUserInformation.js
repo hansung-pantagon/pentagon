@@ -8,7 +8,7 @@ function EditUserInformation () {
 
     return (
         <>
-            <div className="background">
+            <div>
                 <div className="left-box">
                     <button onClick={() => setContent(true)}>설정</button>
                     <button onClick={()=>setContent(false)}>테마</button>

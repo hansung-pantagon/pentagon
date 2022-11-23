@@ -1,11 +1,11 @@
 import React from 'react';
-import './setTheme.css';
+import './editUserInformation.css';
 
 const SetTheme = () => {
     return (
         <>
             <div>테마</div>
-                <div className="setting">
+                <div className="theme">
                     <div>바탕</div>
                     <div className ="theme-box">
                         <div className = "pink"></div>
@@ -16,7 +16,7 @@ const SetTheme = () => {
                         <div className = "grey"></div>
                     </div>
                 </div>
-                <div className="setting">
+                <div className="theme">
                     <div>사진첩</div>
                     <div className ="theme-box">
                         <div className = "pink"></div>
