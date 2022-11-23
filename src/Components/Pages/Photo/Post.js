@@ -2,6 +2,8 @@ import './Post.css';
 import React, { useState } from "react";
 import { GrGallery } from "react-icons/gr"
 
+const loggedIn = window.sessionStorage.getItem("loginId");
+
 const Post = ({ onSaveData }) => {
     const [form, setForm] = useState({
         id: "", // 사용자 id
@@ -18,9 +20,11 @@ const Post = ({ onSaveData }) => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         const files = e.target.files;
+        console.log(loggedIn);
 
         setForm({
             ...form,
+            "id": loggedIn,
             "imgUrl": () => {
                 URL.createObjectURL(files[0]);
             },
@@ -52,13 +56,13 @@ const Post = ({ onSaveData }) => {
             <div id="main-info">게시글 추가하기</div>
             <br />
             <form onSubmit={handleSubmit}>
-                <div id="main-label-div">
+                {/* <div id="main-label-div">
                     <label className="label" htmlFor="id">Id
                         <input 
                             required placeholder="id를 입력해주세요" type="text" name="id"
                             value={form.id} onChange={handleChange} />
                     </label>
-                </div>
+                </div> */}
                 <br />
                 <div className="sub-label-div">
                     <label

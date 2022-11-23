@@ -10,6 +10,7 @@ import './Board.css'
  * 
  */
 const getData = window.localStorage.getItem("post");
+const loggedIn = window.sessionStorage.getItem("loginId");
 
 const Board = () => {
     const [info, setInfo] = useState([]);   // info: 전체 데이터 배열
@@ -17,7 +18,7 @@ const Board = () => {
     const [modalOn, setModalOn] = useState(false);
     // const [likeValue, setLikeValue] = useState(JSON.parse(localData));
 
-    // getData가 null(아무것도 들어가지 않은 상태)이거나 빈 배열(다 삭제된 상태) 생각
+    // getData가 null(아무것도 들어가지 않은 상태)이거나 빈 배열(다 삭제된 상태)인 경우
     const nowPostId = (!getData || getData === "[]") ? 0 : JSON.parse(getData).at(-1).postId;
 
     // ref를 사용하여 변수 담기
@@ -25,10 +26,13 @@ const Board = () => {
 
     // 데이터 호출
     useEffect(() => {
+        window.sessionStorage.setItem("loginId", "a");
         let post = JSON.parse(getData);   // 데이터 배열이 전달되도록
         if (!post) {
             post = [];
         }
+        window.sessionStorage.getItem("loggedIn");
+        
         setInfo(post);
     }, []);
 
@@ -51,21 +55,20 @@ const Board = () => {
     // 데이터를 수정 또는 추가해서 info 변경 -> 리렌더링
     const handleSave = (data) => {
         // destructing assignment(구조분해할당) 
-        const { id, content, imgUrl } = data;
+        const { content, imgUrl } = data;
+        console.log(loggedIn);
 
         // 데이터 수정하기
         if (data.postId) {  // postId
             const editArray = JSON.parse(getData).map(row => data.postId === row.postId ? {
                 postId: data.postId,
-                    // postInfo: {
-                    id,
-                    // like: data.postInfo.like,
-                    // private: data.postInfo.private,
-                    imgUrl, // imgUrl: data.postInfo.imgUrl,
-                    content,
-                    // dateAt: data.postInfo.dateAt
-                    // },
-                } : row)
+                id: loggedIn,
+                // like: data.postInfo.like,
+                // private: data.postInfo.private,
+                imgUrl, // imgUrl: data.postInfo.imgUrl,
+                content,
+                // dateAt: data.postInfo.dateAt
+            } : row)
             setInfo (editArray)
             console.log(editArray);
             window.localStorage.setItem("post", JSON.stringify(editArray));
@@ -74,16 +77,15 @@ const Board = () => {
             
             // 데이터 추가하기, info는 전체 데이터 배열
             setInfo( info => info.concat({
-                    postId: nextPostId.current,
-                    // postInfo: {
-                    id,    // postId: data.postId
-                    // like: data.like,
-                    // private: data.private,
-                    imgUrl, // imgUrl: data.imgUrl,
-                    content,
-                    // dateAt: data.dateAt
-                    // }
-                }))
+                postId: nextPostId.current,
+                
+                id: loggedIn,    // postId: data.postId
+                // like: data.like,
+                // private: data.private,
+                imgUrl, // imgUrl: data.imgUrl,
+                content,
+                // dateAt: data.dateAt
+            }))
             data.postId = nextPostId.current;
             storeLocal("post", data);
             nextPostId.current += 1;
@@ -105,14 +107,12 @@ const Board = () => {
         setModalOn(true);
         const selectedData = {
             postId, // id: item.id
-            // postInfo: {
             id,
             // like: item.postInfo.like,
             // private: item.postInfo.like,
             imgUrl, // imgUrl: item.postInfo.imgUrl,
             content,
             // dateAt: item.postInfo.dateAt,
-            // }
         };
         console.log(selectedData);
         setSelected(selectedData);
