@@ -6,6 +6,7 @@ import Photo from './Components/Pages/Photo/post/post'
 import Friend from './Components/Pages/Friend/searchFriend'
 import Anniversary from './Components/Pages/Anniversary/anniversary'
 import Setting from './Components/Pages/Setting/editUserInformation'
+import WritePost from './Components/Pages/Photo/writePost/writePost'
 import SignUp from './Components/Pages/Login/signUp';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignUpInPage from "./Components/Pages/Login/SignUpInPage";
@@ -23,7 +24,9 @@ function App() {
         {/*중첩 라우터 */}
         <Route path="/home" element={<Home />} >
           <Route path="" element={<Main />} />
-          <Route path="photo" element={<Photo />} />
+          <Route path="photo" element={<Photo />}>
+          </Route>
+          <Route path="photo/writePost" element={<WritePost/>}/>
           <Route path="friend" element={<Friend />} />
           <Route path="anniversary" element={<Anniversary />} />
           <Route path="setting" element={<Setting />} />

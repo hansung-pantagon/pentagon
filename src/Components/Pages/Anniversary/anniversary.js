@@ -94,29 +94,31 @@ const anniversary = () => {
 
     return (
         <>
-         <div className="background"></div>
-         <div className="whitebox">
+         {/* <div className="background-anniversary"></div> */}
+        <div className="whitebox">
+            
+         <div className="heart"></div>
             {/* <div className="img-circle"><img src="{signup.boy.imgUrl}"/>
             <img src="{heart}"/></div> */}
-         </div>
-         <div className="heart"></div>
          <div className="firstday">
            <h3> 우리 함께한 지
             {day} days since SEP 16, 2021</h3>
          </div>
          <div className="leftday1">500days</div>
          <div className="rightday1"><h3>{leaveday1}days left {fivehurdredDate}</h3></div>
-         <div className="leftday2">600days</div>
-         <div className="rightday2"><h3>{leaveday2}days left {sixhurdredDate}</h3></div>
-         <div className="leftday3">700days</div>
-         <div className="rightday3"><h3>{leaveday3}days left {sevenhurdredDate}</h3></div>
-         <div className="leftday4">1000days</div>
-         <div className="rightday4"><h3>{leaveday4}days left {thousandDate}</h3></div>
          <div className="line1"></div>
          <div className="line2"></div>
+         <div className="leftday2">600days</div>
+         <div className="rightday2"><h3>{leaveday2}days left {sixhurdredDate}</h3></div>
          <div className="line3"></div>
+         <div className="leftday3">700days</div>
+         <div className="rightday3"><h3>{leaveday3}days left {sevenhurdredDate}</h3></div>
          <div className="line4"></div>
+         <div className="leftday4">1000days</div>
+         <div className="rightday4"><h3>{leaveday4}days left {thousandDate}</h3></div>
          <div className="line5"></div>
+         </div>
+         
             
         </>
     );
