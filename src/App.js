@@ -8,6 +8,7 @@ import Anniversary from './Components/Pages/Anniversary/anniversary'
 import Setting from './Components/Pages/Setting/editUserInformation'
 import WritePost from './Components/Pages/Photo/writePost/writePost'
 import EachPost from './Components/Pages/Photo/eachPost/eachPost'
+import EditPost from './Components/Pages/Photo/editPost/editPost'
 import SignUp from './Components/Pages/Login/signUp';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignUpInPage from "./Components/Pages/Login/SignUpInPage";
@@ -28,6 +29,7 @@ function App() {
           <Route path="photo" element={<Photo />}/>
           <Route path="photo/writePost" element={<WritePost/>}/>
           <Route path="photo/eachPost" element={<EachPost/>}/>
+          <Route path="photo/editPost" element={<EditPost/>}/>
           <Route path="photo/:postId" element={<EachPost/>}/>
           <Route path="friend" element={<Friend />} />
           <Route path="anniversary" element={<Anniversary />} />

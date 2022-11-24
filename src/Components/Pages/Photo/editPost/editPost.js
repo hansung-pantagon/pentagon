@@ -1,33 +1,35 @@
 import React from 'react';
-import './eachPost.css';
 import {Link} from "react-router-dom";
 
-const eachPost = () => {
+const writePost = () => {
     return (
         <div className="writePost-container">
+            <form action="">
                 <div>
-                    <div className="date">2022년 10월 1일</div>
+                    <div className="date">날짜 <input type="date"></input></div>
                     <div>
-                        <Link to="/home/photo"><div className="cancel">이전</div></Link>
-                        <Link to="/home/photo/editPost" className="upload">수정</Link>
-                        <div className="upload">삭제</div>
+                        <Link to="/home/photo"><div className="cancel">취소</div></Link>
+                        
+                        {/*글 작성 처리*/}
+                        <div className="upload">수정</div>
                     </div>
                     
                 </div>
                 <div className="writePost-down">
                     <div className="writePost-content-container">
                         <div>
-                            <img src="" type="file" className="writePost-img"></img>
+                            <input type="file" className="writePost-img"></input>
                         </div>
                         <div>
-                            <div className="writePost-content" type="text"> // 여기에 내용</div>
+                            <input className="writePost-content" type="text"></input>
                         </div>
                         
                     </div>
                 </div>
+            </form>
             
         </div>
     );
 };
 
-export default eachPost;
+export default writePost;
