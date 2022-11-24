@@ -5,10 +5,6 @@ import Post from "./Post";
 import Modal from "./Modal";
 import './Board.css'
 
-/**
- * 
- * 
- */
 const getData = window.localStorage.getItem("post");
 const loggedIn = window.sessionStorage.getItem("loginId");
 
@@ -16,7 +12,6 @@ const Board = () => {
     const [info, setInfo] = useState([]);   // info: 전체 데이터 배열
     const [selected, setSelected] = useState("");
     const [modalOn, setModalOn] = useState(false);
-    // const [likeValue, setLikeValue] = useState(JSON.parse(localData));
 
     // getData가 null(아무것도 들어가지 않은 상태)이거나 빈 배열(다 삭제된 상태)인 경우
     const nowPostId = (!getData || getData === "[]") ? 0 : JSON.parse(getData).at(-1).postId;
@@ -32,7 +27,8 @@ const Board = () => {
             post = [];
         }
         window.sessionStorage.getItem("loggedIn");
-        
+
+        console.log(post);
         setInfo(post);
     }, []);
 
@@ -55,19 +51,17 @@ const Board = () => {
     // 데이터를 수정 또는 추가해서 info 변경 -> 리렌더링
     const handleSave = (data) => {
         // destructing assignment(구조분해할당) 
-        const { content, imgUrl } = data;
+        const { content, imgUrl, dateAt } = data;
         console.log(loggedIn);
-
+        
         // 데이터 수정하기
-        if (data.postId) {  // postId
+        if (data.postId) {
             const editArray = JSON.parse(getData).map(row => data.postId === row.postId ? {
                 postId: data.postId,
                 id: loggedIn,
-                // like: data.postInfo.like,
-                // private: data.postInfo.private,
-                imgUrl, // imgUrl: data.postInfo.imgUrl,
+                imgUrl,
                 content,
-                // dateAt: data.postInfo.dateAt
+                dateAt
             } : row)
             setInfo (editArray)
             console.log(editArray);
@@ -79,12 +73,10 @@ const Board = () => {
             setInfo( info => info.concat({
                 postId: nextPostId.current,
                 
-                id: loggedIn,    // postId: data.postId
-                // like: data.like,
-                // private: data.private,
-                imgUrl, // imgUrl: data.imgUrl,
+                id: loggedIn,
+                imgUrl,
                 content,
-                // dateAt: data.dateAt
+                dateAt
             }))
             data.postId = nextPostId.current;
             storeLocal("post", data);
@@ -103,16 +95,14 @@ const Board = () => {
     }
 
     const handleEdit = item => {
-        const { id, postId, content, imgUrl } = item;
+        const { id, postId, content, imgUrl, dateAt } = item;
         setModalOn(true);
         const selectedData = {
-            postId, // id: item.id
+            postId,
             id,
-            // like: item.postInfo.like,
-            // private: item.postInfo.like,
-            imgUrl, // imgUrl: item.postInfo.imgUrl,
+            imgUrl,
             content,
-            // dateAt: item.postInfo.dateAt,
+            dateAt,
         };
         console.log(selectedData);
         setSelected(selectedData);
@@ -136,11 +126,9 @@ const Board = () => {
                     <tr>
                         <th>Writer</th>
                         <th>postId</th>
-                        {/* <th>like</th> */}
-                        {/* <th>private</th> */}
                         <th>img</th>
                         <th>content</th>
-                        {/* <th>dateAt</th> */}
+                        <th>dateAt</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>

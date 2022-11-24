@@ -9,7 +9,7 @@ import { FaTrash, FaUserEdit } from "react-icons/fa"
 
 const Td = ({ item, handleRemove, handleEdit }) => {    // item는 게시글 정보
 
-    const { id, postId, content } = item;
+    const { id, postId, content, dateAt } = item;
     // 데이터 삭제
     const onRemove = () => {
         handleRemove(item.postId);  // postId
@@ -25,11 +25,9 @@ const Td = ({ item, handleRemove, handleEdit }) => {    // item는 게시글 정
         <tr>
             <td className="item">{id}</td>
             <td className="item">{postId}</td>
-            {/* <td class="item">{item.postInfo.like}</td> */}
-            {/* <td class="item">{item.postInfo.private}</td> */}
-            <td className="item" alt=""><img src={item.imgUrl} /></td>
+            <td className="item" alt=""><img src={item.imgUrl} alt="" /></td>
             <td className="item">{content}</td>
-            {/* <td class="item">{dateAt}</td> */}
+            <td className="item">{dateAt}</td>
             <td id="edit" onClick={onEdit}>
                 <FaUserEdit />
             </td>

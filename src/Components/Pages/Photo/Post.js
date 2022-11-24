@@ -8,11 +8,9 @@ const Post = ({ onSaveData }) => {
     const [form, setForm] = useState({
         id: "", // 사용자 id
         postId: "", // 게시글 번호
-        // like: 0,
-        // private: true,    // default: true
         imgUrl: "",
         content: "",    // 게시글 내용
-        // dateAt: ""  // 데이트 한 날짜
+        dateAt: ""  // 데이트 한 날짜
     });
 
     const imgInfo = document.getElementById("input-file");
@@ -43,11 +41,9 @@ const Post = ({ onSaveData }) => {
         setForm({
             id: "",
             postId: "", // 게시글 번호
-            // like: null,       // 해당 게시글 좋아요 수
-            // private: true,    // default: true
             imgUrl: "",
             content: "",    // 게시글 내용
-            // dateAt: ""  // 데이트 한 날짜
+            dateAt: ""  // 데이트 한 날짜
         })
     }
 
@@ -56,13 +52,6 @@ const Post = ({ onSaveData }) => {
             <div id="main-info">게시글 추가하기</div>
             <br />
             <form onSubmit={handleSubmit}>
-                {/* <div id="main-label-div">
-                    <label className="label" htmlFor="id">Id
-                        <input 
-                            required placeholder="id를 입력해주세요" type="text" name="id"
-                            value={form.id} onChange={handleChange} />
-                    </label>
-                </div> */}
                 <br />
                 <div className="sub-label-div">
                     <label
@@ -80,6 +69,9 @@ const Post = ({ onSaveData }) => {
                             onChange={handleChange}
                         />
                     </label>
+                    <div>
+                        {/* <DateCalendar /> */}
+                    </div>
                     <br />
                     <label className="label" htmlFor="content">content
                         <input 
@@ -90,8 +82,21 @@ const Post = ({ onSaveData }) => {
                             value={form.content}
                             onChange={handleChange} />
                     </label>
+                    <label
+                        className="label"
+                        htmlFor="dateAt"
+                    >
+                        데이트 한 날짜
+                        
+                        <input 
+                            type='date'
+                            id="dateAt"
+                            name="dateAt"
+                            // style={{ display: 'none'}}
+                            onChange={handleChange}
+                        />
+                    </label>
                 </div>
-
                 <div id="saveBtn">
                     <button id="saveBtn" type='submit'>저장</button>
                 </div>

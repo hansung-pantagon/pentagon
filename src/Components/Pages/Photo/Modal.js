@@ -31,12 +31,8 @@ const Modal = ({ selectedData, handleCancel, handleEditSubmit }) => {
                 <form onSubmit={onSubmitEdit}>
                     <div className="p-3">
                         <div>POST_ID: {edited.id}</div>
-                        {/* <div>Name: <input type='text' name='name' 
-                        value={edited.name} onChange={onEditChange} /></div> */}
                         <div>Content: <input type='text' name='content' 
                         value={edited.content} onChange={onEditChange} /></div>
-                        {/* <div>Phone: <input type='text' name='phone' 
-                        value={edited.phone} onChange={onEditChange} /></div> */}
                     </div>
                     <div>
                         <button onClick={onCancel}>취소</button>
