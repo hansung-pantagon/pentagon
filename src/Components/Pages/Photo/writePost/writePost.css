@@ -1,5 +1,5 @@
-.writePost-up{
-    
+.writePost-container{
+    margin:1%;
 }
 
 .date{
@@ -10,12 +10,14 @@
     background: #D9D9D9;
     border-radius: 10px;
     float:right;
+    margin-right:2%;
 }
 
 .cancel{
     background: #D9D9D9;
     border-radius: 10px;
     float:right;
+    margin-right:1%;
 }
 
 .writePost-down{
@@ -29,23 +31,27 @@
 .writePost-content-container{
     border: 1px solid #696969;
     background: #ffffff;
-    margin:10%;
+    margin:8%;
     width:80%;
+    padding:2%;
+    padding-top:5%;
 }
 
 .writePost-content-container > div{
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .writePost-img{
     background: #D9D9D9;
-    width:90%;
-    height:200px;
+    width:85%;
+    height:210px;
     border: 1px solid #696969;
 }
 
 .writePost-content{
-    width:200px;
-    height:100px;
+    width:85%;
+    height:60px;
+    margin:3%;
 }
