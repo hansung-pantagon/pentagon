@@ -1,7 +1,8 @@
 .post-container{
     text-align: center;
     margin:1%;
-    
+    overflow:scroll;
+    height: 100%;
 }
 
 .post{
@@ -44,7 +45,7 @@
 
 .postImg{
     margin:10%;
-    width:60%;
+    width:75%;
     
 }
 
@@ -59,4 +60,11 @@
     margin-top:3%;
     margin-bottom:5%;
     font-size: small;
+    width: 110px;
+    
+}
+.postContent div{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

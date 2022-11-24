@@ -28,6 +28,7 @@ function App() {
           <Route path="photo" element={<Photo />}/>
           <Route path="photo/writePost" element={<WritePost/>}/>
           <Route path="photo/eachPost" element={<EachPost/>}/>
+          <Route path="photo/:postId" element={<EachPost/>}/>
           <Route path="friend" element={<Friend />} />
           <Route path="anniversary" element={<Anniversary />} />
           <Route path="setting" element={<Setting />} />
