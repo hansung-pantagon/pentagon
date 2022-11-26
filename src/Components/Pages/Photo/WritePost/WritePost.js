@@ -8,6 +8,10 @@ const loggedIn = "1";
 
 const WritePost = () => {
     const navigate = useNavigate();
+
+    const getData = window.localStorage.getItem("post");
+
+    const [imageSrc, setImageSrc] = useState('');
     const [info, setInfo] = useState([]);
     const [form, setForm] = useState({
         id: "",
@@ -17,7 +21,6 @@ const WritePost = () => {
         dateAt: "",
     });
 
-    const getData = window.localStorage.getItem("post");
 
     const nowPostId = 
         (!getData || getData === "[]") 
@@ -83,6 +86,10 @@ const WritePost = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         const files = e.target.files;
+        console.log(imgInfo);
+        if (!!files) {
+            setImageSrc(URL.createObjectURL(files[0]));
+        }
 
         setForm({
             ...form,
@@ -155,6 +162,10 @@ const WritePost = () => {
                                 accept=".jpg, .jpeg, .png" 
                                 onChange={handleChange}
                             />
+                            <div className="preview">
+                                {imageSrc && <img src={imageSrc} alt="preview-img" />}
+                            </div>
+                            {/* <img id="view" src="" alt=""></img> */}
                         </label>
                         </div>
                     </div>
