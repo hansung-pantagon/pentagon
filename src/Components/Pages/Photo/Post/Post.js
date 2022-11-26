@@ -13,13 +13,6 @@ const Post = () => {
     const loggedIn = window.sessionStorage.getItem("loginId");
     const getData = window.localStorage.getItem("post");
 
-    const nowPostId = 
-        (!getData || getData === "[]") 
-        ? 0 
-        : JSON.parse(getData).at(-1).postId;
-
-    const nextPostId = useRef(nowPostId + 1);   
-
     useEffect(() => {
         console.log("rendering");
         console.log(JSON.parse(getData));
@@ -36,49 +29,6 @@ const Post = () => {
 
     let postArray = [];
 
-    const storeLocal = (key, data) => {
-        postArray = JSON.parse(window.localStorage.getItem(key));   
-        if (!postArray) {
-            postArray = [];
-        }
-        postArray.push(data);
-
-        window.localStorage.setItem(key, JSON.stringify(postArray));
-    }
-
-    // write, edit 둘 다 필요
-    const handleSave = (data) => {
-        const { postId, content, imgUrl, dateAt } = data;
-        console.log(loggedIn);
-        
-        if (postId) {
-            const editArray = JSON.parse(getData).map(row => data.postId === row.postId ? {
-                postId,
-                id: loggedIn,
-                imgUrl,
-                content,
-                dateAt
-            } : row)
-            setInfo (editArray)
-            console.log(editArray);
-            window.localStorage.setItem("post", JSON.stringify(editArray));
-        } else {
-            console.log(info);
-            
-            setInfo( info => info.concat({
-                postId: nextPostId.current,
-                id: loggedIn,
-                imgUrl,
-                content,
-                dateAt
-            }))
-            data.postId = nextPostId.current;
-            storeLocal("post", data);
-            nextPostId.current += 1;
-        }
-    }
-
-    // 변동 X
     const handleRemove = postId => {
         postArray = JSON.parse(getData);   
         if (!postArray) { return; }
@@ -88,7 +38,6 @@ const Post = () => {
         setInfo(updateData);
     }
 
-    // 변동 X
     const handleEdit = item => {
         const { id, postId, content, imgUrl, dateAt } = item;
         const selectedData = {
