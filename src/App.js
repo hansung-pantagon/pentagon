@@ -2,13 +2,13 @@ import './App.css';
 import Login from './Components/Pages/Login/login';
 import Home from './Home'
 import Main from './Components/Pages/Main/main'
-import Photo from './Components/Pages/Photo/post/post'
+import Photo from './Components/Pages/Photo/Post/Post'
 import Friend from './Components/Pages/Friend/searchFriend'
 import Anniversary from './Components/Pages/Anniversary/anniversary'
 import Setting from './Components/Pages/Setting/editUserInformation'
-import WritePost from './Components/Pages/Photo/writePost/writePost'
-import EachPost from './Components/Pages/Photo/eachPost/eachPost'
-import EditPost from './Components/Pages/Photo/editPost/editPost'
+import WritePost from './Components/Pages/Photo/WritePost/WritePost'
+import EachPost from './Components/Pages/Photo/EachPost/EachPost'
+import EditPost from './Components/Pages/Photo/EditPost/EditPost'
 import SignUp from './Components/Pages/Login/signUp';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignUpInPage from "./Components/Pages/Login/SignUpInPage";
