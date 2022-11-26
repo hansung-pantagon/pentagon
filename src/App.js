@@ -12,10 +12,24 @@ import EditPost from './Components/Pages/Photo/editPost/editPost'
 import SignUp from './Components/Pages/Login/signUp';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignUpInPage from "./Components/Pages/Login/SignUpInPage";
+import { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
 
 
 function App() {
+  const [bgColor, setBgColor] =useState("#298FA6");
+  const [themeColor, setThemeColor] =useState("#47ACC2");
+
+  const giveColorValue = (bgColor,themeColor)=>{ //와 전달받음
+    setBgColor(bgColor);
+    setThemeColor(themeColor);
+  }
+
+  // useEffect(()=>{
+  //   console.log("app.js에서 ",bgColor);
+  //   console.log("app.js에서 ",themeColor);
+  // },[bgColor,themeColor])
+
   return (
     <div className="App">
     <BrowserRouter>
@@ -24,7 +38,7 @@ function App() {
         {/* <Route path="/:userID" element={<Home />} /> */}
         
         {/*중첩 라우터 */}
-        <Route path="/home" element={<Home />} >
+        <Route path="/home" element={<Home bgValue={bgColor} themeValue={themeColor}/>} >
           <Route path="" element={<Main />} />
           <Route path="photo" element={<Photo />}/>
           <Route path="photo/writePost" element={<WritePost/>}/>
@@ -33,7 +47,7 @@ function App() {
           <Route path="photo/:postId" element={<EachPost/>}/>
           <Route path="friend" element={<Friend />} />
           <Route path="anniversary" element={<Anniversary />} />
-          <Route path="setting" element={<Setting />} />
+          <Route path="setting" element={<Setting giveColorValue={giveColorValue}/>} />
         </Route>
         <Route path="/signUpInPage/*" element={<SignUpInPage />} />
       </Routes>

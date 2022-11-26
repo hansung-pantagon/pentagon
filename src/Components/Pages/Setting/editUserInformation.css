@@ -118,52 +118,12 @@ div > .right-box {
 .theme-box > div {
     margin: 15% 0% 0% 3%;
     float : left;
-}
-.pink{
     width : 13%;
     height : 33%;
-    background: rgba(251, 130, 130, 0.2);
     border-radius: 50%;
+    cursor: pointer;
 }
-.skyblue{
-    width : 13%;
-    height : 33%;
-    background:  #C8E1FF;
-    border-radius: 50%;
-}
-.lightgreen{
-    width : 13%;
-    height : 33%;
-    background: #BCF2C4;
-    border-radius: 50%;
-}
-.lightgrey{
-    width : 13%;
-    height : 33%;
-    background: #F5F5F5;
-    border-radius: 50%;
-}
-.purple{
-    width : 13%;
-    height : 33%;
-    background: #F6D2FF;
-    border-radius: 50%;
-}
-.grey{
-    width : 13%;
-    height : 33%;
-    background: #767676;
-    border-radius: 50%;
-}
-.yellow {
-    width : 13%;
-    height : 33%;
-    background : #EDF7C5;
-    border-radius: 50%;
-}
-.blue {
-    width : 13%;
-    height : 33%;
-    background : #47ACC2;
-    border-radius: 50%;
+
+.theme-box div:focus{
+    border: 1px solid black;
 }

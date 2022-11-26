@@ -3,8 +3,19 @@ import './editUserInformation.css';
 import SetSetting from './setting';
 import SetTheme from './setTheme';
 
-function EditUserInformation () {
+function EditUserInformation (props) {
     const [content, setContent] = useState(false);
+
+    const [bgColor, setBgColor] =useState("#298FA6");
+    const [themeColor, setThemeColor] =useState("#47ACC2");
+
+    const getColorValue = (bgColor,themeColor)=>{ //여기서 전달 받았음
+        setBgColor(bgColor);
+        setThemeColor(themeColor);
+        console.log("editUserInformation에서 ",bgColor);
+        console.log("editUserInformation에서 ",themeColor);
+        props.giveColorValue(bgColor,themeColor);
+    }
 
     return (
         <>
@@ -16,7 +27,7 @@ function EditUserInformation () {
                     <button onClick={()=>setContent(false)}>로그아웃</button>
                 </div>
                 <div className="right-box">
-                    {content ? <SetSetting/> : <SetTheme/>}
+                    {content ? <SetSetting/> : <SetTheme getColorValue={getColorValue}/>}
                 </div>
             </div>
         </>

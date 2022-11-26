@@ -1,16 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css';
 import { Outlet } from "react-router-dom";
 import {Link} from "react-router-dom";
 
 
-const Home = () => {
+const Home = (props) => {
+    console.log("home.js에서 props.bgValue : ", props.bgValue) //전달 성공 ㅎㅎ
+    console.log("home.js에서 props.themeValue : ", props.themeValue)
+    const [letterColor, setLetterColor ]= useState("white");
+    useEffect(()=>{
+        if(props.bgValue!=="#298FA6")
+        setLetterColor("black");
+
+    },[props])
+        
+    
     return (
         <>
         <div className="bookcover">
 
             <div className="bookcover-container">
-            <div className="bookcover-left">
+            <div className="bookcover-left" style={{background: props.themeValue, border: props.themeValue}}>
                 <div className="bookcover-left-dot">
                     <div className="bookcover-left-white">
                         <div className="bookcover-left-content">
@@ -32,7 +42,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="bookcover-right">
+            <div className="bookcover-right" style={{background: props.themeValue, border: props.themeValue}}>
                 <div className="bookcover-right-dot">
                     <div className="bookcover-right-white">
                         <div className="couple-name">OOOO의 홈피</div>
@@ -43,11 +53,11 @@ const Home = () => {
 
                     <div className="menu">
                         <div className="menu-container">
-                            <Link to="/home">메인</Link>
-                            <Link to="/home/photo">사진</Link>
-                            <Link to="/home/friend">친구</Link>
-                            <Link to="/home/anniversary">기념일</Link>
-                            <Link to="/home/setting">설정</Link>
+                            <Link style={{background: props.bgValue, color: letterColor}} to="/home">메인</Link>
+                            <Link style={{background: props.bgValue, color: letterColor}} to="/home/photo">사진</Link>
+                            <Link style={{background: props.bgValue, color: letterColor}} to="/home/friend">친구</Link>
+                            <Link style={{background: props.bgValue, color: letterColor}} to="/home/anniversary">기념일</Link>
+                            <Link style={{background: props.bgValue, color: letterColor}} to="/home/setting">설정</Link>
                         </div>
                     </div>
                 </div>
