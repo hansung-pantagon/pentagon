@@ -3,7 +3,7 @@ import EachPostData from "./EachPostData";
 
 const PostData = ({ info, handleRemove, handleEdit }) => {
     return (
-        <tbody>
+        <>
             {
                 info.map(item => {
                     return (
@@ -16,7 +16,7 @@ const PostData = ({ info, handleRemove, handleEdit }) => {
                     )
                 })
             }
-        </tbody>
+        </>
     );
 };
 
