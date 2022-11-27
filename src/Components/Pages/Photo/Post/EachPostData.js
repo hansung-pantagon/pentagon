@@ -1,6 +1,6 @@
 import React from "react";
 // npm install react-icons
-import { FaTrash, FaUserEdit } from "react-icons/fa"
+import { FaRegTrashAlt, FaRegEdit } from "react-icons/fa"
 import { Link } from "react-router-dom";
 
 /**
@@ -49,14 +49,14 @@ const EachPostData = ({ item, handleRemove, handleEdit }) => {
                             className="edit"
                             onClick={onEdit}
                         >
-                            <FaUserEdit />
+                            <FaRegEdit color='#000000'/>
                         </div>
                     </Link>
                     <div
                         className="remove"
                         onClick={onRemove}
                     >
-                        <FaTrash />
+                        <FaRegTrashAlt color='#000000'/>
                     </div>
                 </div>
             </div>

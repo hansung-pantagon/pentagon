@@ -54,6 +54,7 @@
 .postDate{
     float:left;
     margin-left:10%;
+    color:#000000;
 }
 
 .postContent{
@@ -63,8 +64,13 @@
     margin-bottom:5%;
     font-size: small;
     width: 110px;
-    
+    color:#000000;
+    /*보이는 글씨 제한*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
 .postContent div{
     white-space: nowrap;
     overflow: hidden;
