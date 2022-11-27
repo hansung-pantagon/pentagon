@@ -18,15 +18,13 @@ const EachPost = () => {
     return (
         <div className="writePost-container">
             <div>
-                <div className="date">
+                <div className="eachPost-date">
                     {selectedData.dateAt}
                 </div>
                 <div>
                     <Link to="/home/photo">
-                        <div className="cancel">
-                            <button onClick={onCancel}>
-                                이전
-                            </button>
+                        <div className="cancel" onClick={onCancel}>
+                            이전
                         </div>
                     </Link>
                 </div>
@@ -43,7 +41,7 @@ const EachPost = () => {
                     </div>
                     <div>
                         <div
-                            className="writePost-content" 
+                            className="eachPost-content" 
                             type="text"> 
                             {selectedData.content}
                         </div>

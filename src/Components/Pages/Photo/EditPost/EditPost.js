@@ -77,15 +77,13 @@ const EditPost = () => {
         <div className="writePost-container">
             <form onSubmit={onSubmitEdit}>
                 <div>
-                    <div>
+                    <div className="eachPost-date">
                         {selectedData.dateAt}
                     </div>
                     <div>
                         <Link to="/home/photo">
                             <div className="cancel">
-                                <button>
-                                    취소
-                                </button>
+                                취소
                             </div>
                         </Link>
                         <div className="upload">
@@ -98,21 +96,17 @@ const EditPost = () => {
                 <div className="writePost-down">
                     <div className="writePost-content-container">
                         <div>
-                            POST_ID: {selectedData.postId}
+                            <div className="writePost-img">
+                                <img 
+                                    id="view" 
+                                    src={selectedData.imgUrl}
+                                    className="uploadIMG"
+                                    alt="">
+                                </img>
+                            </div>
                         </div>
+
                         <div>
-                            <img 
-                                id="view" 
-                                src={selectedData.imgUrl}
-                                alt="">
-                            </img>
-                        </div>
-                    </div>
-                </div>
-                <div className="writePost-down">
-                    <div className="writePost-content-container">
-                        <div>
-                            Content: 
                             <input 
                                 className="writePost-content"
                                 type='text' 
@@ -121,7 +115,8 @@ const EditPost = () => {
                                 onChange={onEditChange} 
                             />
                         </div>
-                    </div>
+                        
+                    </div>     
                 </div>
             </form>
         </div>

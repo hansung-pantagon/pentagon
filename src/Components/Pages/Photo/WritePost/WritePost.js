@@ -114,14 +114,12 @@ const WritePost = () => {
     return (
         <div className="writePost-container">
             <form onSubmit={handleSubmit}>
-                <br />
                 <div>
                     <label
                         className="date"
                         htmlFor="dateAt"
                     >
                         데이트 한 날짜
-                        
                         <input
                             type="date"
                             id="dateAt"
@@ -131,7 +129,7 @@ const WritePost = () => {
                     </label>
                     <div>
                         <Link to="/home/photo">
-                            <div className="upload-cancel">취소</div>
+                            <div className="cancel">취소</div>
                         </Link>
                         
                         {/*글 작성 처리*/}

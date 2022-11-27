@@ -1,5 +1,5 @@
 .writePost-container{
-    margin:1%;
+    margin:2%;
 }
 
 .date{
@@ -24,7 +24,7 @@
     cursor: pointer;
 }
 
-.upload-cancel{
+.cancel{
     background: #D9D9D9;
     border-radius: 10px;
     float:right;
