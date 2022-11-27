@@ -113,8 +113,6 @@ const WritePost = () => {
 
     return (
         <div className="writePost-container">
-            <div id="main-info">게시글 추가하기</div>
-            <br />
             <form onSubmit={handleSubmit}>
                 <br />
                 <div>
@@ -123,6 +121,7 @@ const WritePost = () => {
                         htmlFor="dateAt"
                     >
                         데이트 한 날짜
+                        
                         <input
                             type="date"
                             id="dateAt"
@@ -132,13 +131,13 @@ const WritePost = () => {
                     </label>
                     <div>
                         <Link to="/home/photo">
-                            <div className="cancel">취소</div>
+                            <div className="upload-cancel">취소</div>
                         </Link>
                         
                         {/*글 작성 처리*/}
                         <div className="upload">
                             <button 
-                                id="saveBtn" 
+                                className="saveBtn" 
                                 type='submit'>
                                 저장
                             </button>
@@ -149,11 +148,6 @@ const WritePost = () => {
                 <div className="writePost-down">
                     <div className="writePost-content-container">
                         <div>
-                        <label
-                            htmlFor="imgUrl"
-                        >
-                            <GrGallery />
-                                Add photo
                             <input 
                                 type='file'
                                 // className="writePost-img"
@@ -162,32 +156,34 @@ const WritePost = () => {
                                 accept=".jpg, .jpeg, .png" 
                                 onChange={handleChange}
                             />
-                            <div className="preview">
-                                {imageSrc && <img src={imageSrc} alt="preview-img" />}
-                            </div>
-                            {/* <img id="view" src="" alt=""></img> */}
-                        </label>
                         </div>
-                    </div>
-                </div>
-                <div className="writePost-down">
-                    <div className="writePost-content-conatiner">
+
                         <div>
-                        <label 
-                            className="label" 
-                            htmlFor="content">
-                                content
+                            <div className="writePost-img">
+                                <label htmlFor="imgUrl">
+                                    {/* <GrGallery />
+                                        Add photo */}
+                                    <div className="preview">
+                                        {imageSrc && <img src={imageSrc} alt="preview-img" className="uploadIMG" />}
+                                    </div>
+                                    {/* <img id="view" src="" alt=""></img> */}
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
                             <input 
                                 placeholder='게시글 내용을 입력해주세요'
                                 type='text'
                                 name='content'
+                                className='writePost-content'
                                 value={form.content}
                                 onChange={handleChange} 
                             />
-                        </label>
                         </div>
+                    
                     </div>
-                </div>
+                </div> 
             </form>
         </div>
     );

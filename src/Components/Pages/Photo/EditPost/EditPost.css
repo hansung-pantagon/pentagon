@@ -1,9 +1,10 @@
-.writePost-container{
+/* .writePost-container{
     margin:1%;
 }
 
 .date{
     float:left;
+    margin-right:1%;
 }
 
 .upload{
@@ -19,7 +20,7 @@
     border-radius: 10px;
     float:right;
     margin-right:1%;
-    padding:1%;
+    padding:1.2%;
 }
 
 .writePost-down{
@@ -53,7 +54,7 @@
 }
 
 .writePost-content{
-    width:85%;
+    width:100%;
     height:60px;
     margin:3%;
-}
+} */
