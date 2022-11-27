@@ -5,14 +5,27 @@ import {Link} from "react-router-dom";
 
 
 const Home = (props) => {
-    console.log("home.js에서 props.bgValue : ", props.bgValue) //전달 성공 ㅎㅎ
-    console.log("home.js에서 props.themeValue : ", props.themeValue)
+    // console.log("home.js에서 props.postitValue : ", props.postitValue) //전달 성공 ㅎㅎ
+    // console.log("home.js에서 props.themeValue : ", props.themeValue)
     const [letterColor, setLetterColor ]= useState("white");
+    const[leftBorderStyle, setLeftBorderStyle] = useState("1px solid" + props.leftValue);
+    const[rightBorderStyle, setRightBorderStyle] = useState("1px solid" + props.rightValue);
+    const[borderDotStyle, setBorderDotStyle] = useState("1px dashed white"); //dot
+
     useEffect(()=>{
-        if(props.bgValue!=="#298FA6")
-        setLetterColor("black");
+        if(props.postitValue!=="#298FA6"){
+            setLetterColor("black");
+
+        }
+        else{
+            setLetterColor("white");
+
+        }
+        setLeftBorderStyle("1px solid " + props.leftValue);
+        setRightBorderStyle("1px solid " + props.rightValue);
 
     },[props])
+    
         
     
     return (
@@ -20,7 +33,7 @@ const Home = (props) => {
         <div className="bookcover">
 
             <div className="bookcover-container">
-            <div className="bookcover-left" style={{background: props.themeValue, border: props.themeValue}}>
+            <div className="bookcover-left" style={{background: props.leftValue, border: leftBorderStyle}}>
                 <div className="bookcover-left-dot">
                     <div className="bookcover-left-white">
                         <div className="bookcover-left-content">
@@ -42,7 +55,7 @@ const Home = (props) => {
                 </div>
             </div>
 
-            <div className="bookcover-right" style={{background: props.themeValue, border: props.themeValue}}>
+            <div className="bookcover-right" style={{background: props.rightValue, border: rightBorderStyle}}>
                 <div className="bookcover-right-dot">
                     <div className="bookcover-right-white">
                         <div className="couple-name">OOOO의 홈피</div>
@@ -53,11 +66,11 @@ const Home = (props) => {
 
                     <div className="menu">
                         <div className="menu-container">
-                            <Link style={{background: props.bgValue, color: letterColor}} to="/home">메인</Link>
-                            <Link style={{background: props.bgValue, color: letterColor}} to="/home/photo">사진</Link>
-                            <Link style={{background: props.bgValue, color: letterColor}} to="/home/friend">친구</Link>
-                            <Link style={{background: props.bgValue, color: letterColor}} to="/home/anniversary">기념일</Link>
-                            <Link style={{background: props.bgValue, color: letterColor}} to="/home/setting">설정</Link>
+                            <Link style={{background: props.postitValue, color: letterColor}} to="/home">메인</Link>
+                            <Link style={{background: props.postitValue, color: letterColor}} to="/home/photo">사진</Link>
+                            <Link style={{background: props.postitValue, color: letterColor}} to="/home/friend">친구</Link>
+                            <Link style={{background: props.postitValue, color: letterColor}} to="/home/anniversary">기념일</Link>
+                            <Link style={{background: props.postitValue, color: letterColor}} to="/home/setting">설정</Link>
                         </div>
                     </div>
                 </div>

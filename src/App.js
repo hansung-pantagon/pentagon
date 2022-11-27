@@ -17,18 +17,20 @@ import {Link} from "react-router-dom";
 
 
 function App() {
-  const [bgColor, setBgColor] =useState("#298FA6");
-  const [themeColor, setThemeColor] =useState("#47ACC2");
+  const [leftColor, setleftColor] =useState("#47ACC2");
+    const [rightColor, setrightColor] =useState("#47ACC2");
+    const [postitColor, setPostitColor] =useState("#298FA6");
 
-  const giveColorValue = (bgColor,themeColor)=>{ //와 전달받음
-    setBgColor(bgColor);
-    setThemeColor(themeColor);
+  const giveColorValue = (leftColor, rightColor, postitColor)=>{ //와 전달받음
+    setleftColor(leftColor) ;
+    setrightColor(rightColor);
+    setPostitColor(postitColor);
   }
 
   // useEffect(()=>{
-  //   console.log("app.js에서 ",bgColor);
-  //   console.log("app.js에서 ",themeColor);
-  // },[bgColor,themeColor])
+  //   console.log("app.js에서 ",leftColor) ;
+  //   console.log("app.js에서 ",rightColor);
+  // },[leftColor, rightColor])
 
   return (
     <div className="App">
@@ -38,7 +40,7 @@ function App() {
         {/* <Route path="/:userID" element={<Home />} /> */}
         
         {/*중첩 라우터 */}
-        <Route path="/home" element={<Home bgValue={bgColor} themeValue={themeColor}/>} >
+        <Route path="/home" element={<Home leftValue={leftColor} rightValue={rightColor} postitValue={postitColor}/>} >
           <Route path="" element={<Main />} />
           <Route path="photo" element={<Photo />}/>
           <Route path="photo/writePost" element={<WritePost/>}/>

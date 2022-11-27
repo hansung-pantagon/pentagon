@@ -32,8 +32,9 @@ function EditUserInformation (props) {
     const [content, setContent] = useState(false);
     // SetSetting 컴포넌트에 넘겨줄 데이터 정의
 
-    const [bgColor, setBgColor] =useState("#298FA6");
-    const [themeColor, setThemeColor] =useState("#47ACC2");
+    const [leftColor, setleftColor] =useState("#47ACC2");
+    const [rightColor, setrightColor] =useState("#47ACC2");
+    const [postitColor, setPostitColor] =useState("#298FA6");
 
     // 로컬의 전체 유저 데이터 가져오는 함수
     const getLocalUsers = JSON.parse(window.localStorage.getItem("user"));
@@ -48,12 +49,13 @@ function EditUserInformation (props) {
 
 
 
-    const getColorValue = (bgColor,themeColor) => { //여기서 전달 받았음
-        setBgColor(bgColor);
-        setThemeColor(themeColor);
-        console.log("editUserInformation에서 ",bgColor);
-        console.log("editUserInformation에서 ",themeColor);
-        props.giveColorValue(bgColor,themeColor);
+    const getColorValue = (leftColor, rightColor, postitColor) => { //여기서 전달 받았음
+        setleftColor(leftColor);
+        setrightColor(rightColor);
+        setPostitColor(postitColor);
+        // console.log("editUserInformation에서 ",leftColor);
+        // console.log("editUserInformation에서 ",rightColor);
+        props.giveColorValue(leftColor,rightColor, postitColor);
     }
 
     return (

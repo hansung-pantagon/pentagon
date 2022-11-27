@@ -3,26 +3,32 @@ import './editUserInformation.css';
 import { useEffect, useState } from "react";
 
 const SetTheme = (props) => {
-    const [bgColor, setBgColor] =useState("");
-    const [themeColor, setThemeColor] =useState("");
+    const [leftColor, setLeftColor] =useState("");
+    const [rightColor, setRightColor] =useState("");
+    const [postitColor, setPostitColor] =useState("");
     const submit = (e) =>{
         e.preventDefault();
-        props.getColorValue(bgColor,themeColor);
+        props.getColorValue(leftColor,rightColor,postitColor);
         
     }
     
-    const bgColorChangeHandler = (e) => {
-        setBgColor(e.currentTarget.style.background);
+    const leftChangeHandler = (e) => {
+        setLeftColor(e.currentTarget.style.background);
         console.log("클릭",e.currentTarget.style.background);
     }
 
-    const themeChangeHandler = (e) => {
-        setThemeColor(e.currentTarget.style.background);
+    const rightChangeHandler = (e) => {
+        setRightColor(e.currentTarget.style.background);
         console.log("클릭",e.currentTarget.style.background);
     }
 
-    const bgColorList = [
-        {id:1, color:"rgba(251, 130, 130, 0.2)"}, //pink
+    const postItChangeHandler = (e) => {
+        setPostitColor(e.currentTarget.style.background);
+        console.log("클릭",e.currentTarget.style.background);
+    }
+
+    const postItColorList = [ 
+        {id:1, color:"#E2B0B0"}, //pink
         {id:2, color:"#C8E1FF"}, //skyblue
         {id:3, color:"#BCF2C4"}, //lighgreen
         {id:4, color:"#F5F5F5"}, //lighgray
@@ -31,7 +37,7 @@ const SetTheme = (props) => {
     ]
 
     const themeColorList = [
-        {id:1, color:"rgba(251, 130, 130, 0.2)"}, //pink
+        {id:1, color:"#E9D1D1"}, //pink
         {id:2, color:"#C8E1FF"}, //skyblue
         {id:3, color:"#BCF2C4"}, //lighgreen
         {id:4, color:"#EDF7C5"}, //yellow
@@ -43,18 +49,24 @@ const SetTheme = (props) => {
     return (
         <>
         <form onSubmit={submit}>
-            <div>테마</div>
                 <div className="theme">
-                    <div>포스터</div>
+                    <div>사진첩 왼쪽</div>
                     <div className ="theme-box">
-                        {bgColorList.map(color => <div key={color.id} style= {{background:color.color}} onClick={bgColorChangeHandler}></div>)}
+                        {themeColorList.map(color => <div key={color.id} style= {{background:color.color}} onClick={leftChangeHandler}></div>)}
                         
                     </div>
                 </div>
                 <div className="theme">
-                    <div>사진첩</div>
+                    <div>사진첩 오른쪽</div>
                     <div className ="theme-box">
-                        {themeColorList.map(color => <div key={color.id} style= {{background:color.color}} onClick={themeChangeHandler}></div>)}
+                        {themeColorList.map(color => <div key={color.id} style= {{background:color.color}} onClick={rightChangeHandler}></div>)}
+                        
+                    </div>
+                </div>
+                <div className="theme">
+                    <div>포스트잇</div>
+                    <div className ="theme-box">
+                        {postItColorList.map(color => <div key={color.id} style= {{background:color.color}} onClick={postItChangeHandler}></div>)}
                     </div>
                 </div>
             <button>설정</button>
