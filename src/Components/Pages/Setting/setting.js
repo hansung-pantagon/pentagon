@@ -11,24 +11,20 @@ const SetSetting = ( {userInfo} ) => {
 
     // 바뀐 데이터를 로컬 스토리지에 저장하는 함수
     const handleSave = data => {
-        const { boy, girl, id, idImgUrl, meetAt, nickname, pw } = data;
+        const { id, pw, nickName, boyName, boyBirthday, boyImgUrl, girlName, girlBirthday, girlImgUrl, idImgUrl, meetAt } = data;
         
         const editArray = JSON.parse(getData).map(row => data.id === "aaa@aaa.com" ? {
-            boy: {
-                birthday: boy.name,
-                imgUrl: boy.imgUrl,
-                name: boy.name,
-            },
-            girl: {
-                birthday: girl.name,
-                imgUrl: girl.imgUrl,
-                name: girl.name,
-            },
             id,
+            pw,
+            nickName,
+            boyName,
+            boyBirthday,
+            boyImgUrl,
+            girlName,
+            girlBirthday,
+            girlImgUrl,
             idImgUrl,
-            meetAt,
-            nickname,
-            pw
+            meetAt
         } : row)
         console.log(editArray);
         window.localStorage.setItem("user", JSON.stringify(editArray));
@@ -62,15 +58,15 @@ const SetSetting = ( {userInfo} ) => {
                         <div className ="setting-box">
                             <div>
                                 이름
-                                <div>{userInfo.boy.name}</div>
+                                <div>{userInfo.boyName}</div>
                             </div>
                             <div>생년월일
-                                <div>{userInfo.boy.birthday}</div>
+                                <div>{userInfo.boyBirthday}</div>
                             </div>
                             <div>
                                 <img
                                     id="boyImg"
-                                    src={userInfo.boy.imgUrl}
+                                    src={userInfo.boyImgUrl}
                                     alt="이미지가 없습니다.">
                                 </img>
                             </div>
@@ -79,15 +75,15 @@ const SetSetting = ( {userInfo} ) => {
                         <div className ="setting-box">
                             <div>
                                 이름
-                                <div>{userInfo.girl.name}</div>
+                                <div>{userInfo.girlName}</div>
                             </div>
                             <div>생년월일
-                                <div>{userInfo.girl.birthday}</div>
+                                <div>{userInfo.girlBirthday}</div>
                             </div>
                             <div>
                                 <img
                                     id="boyImg"
-                                    src={userInfo.boy.imgUrl}
+                                    src={userInfo.boyImgUrl}
                                     alt="이미지가 없습니다.">
                                 </img>
                             </div>
@@ -101,7 +97,7 @@ const SetSetting = ( {userInfo} ) => {
                                 className="nickname"
                                 type="text"
                                 name="nickname"
-                                value={edited.nickname}
+                                value={edited.nickName}
                                 onChange={onChange}
                             />
                         </div>

@@ -8,21 +8,17 @@ function EditUserInformation (props) {
     const users = [];
 
     const dummyData = {
-        boy: {
-            birthday: 19990402,
-            name: "name",
-            imgUrl: "imgUrl"
-        },
-        girl: {
-            birthday: 19990402,
-            name: "name",
-            imgUrl: "imgUrl"
-        },
         id: "aaa@aaa.com",
+        pw: "aaa",
+        nickName: "nickName",
+        boyName: "boyName",
+        boyBirthday: "boyBirthday",
+        boyImgUrl: "boyImgUrl",
+        girlName: "girlName",
+        girlBirthday: "girlBirthday",
+        girlImgUrl: "girlImgUrl",
         idImgUrl: "",
         meetAt: "20221111",
-        nickname: "nickname",
-        pw: "aaa"
     }
 
     users.push(dummyData);
