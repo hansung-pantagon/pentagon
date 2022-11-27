@@ -35,6 +35,12 @@ function UserInFormation() {
     const { name, value } = e.target;
     setForms({
       ...forms,
+      boyImgUrl: () => {
+        URL.createObjectURL(e.target.boyImgUrl.value);
+      },
+      girlImgUrl: () => {
+        URL.createObjectURL(e.target.girlImgUrl.value);
+      },
       [name]: value,
     });
   };
@@ -68,10 +74,10 @@ function UserInFormation() {
           nickName: e.target.nickName.value,
           boyBirthday: boyBirthday,
           boyName: e.target.boyName.value,
-          boyImgUrl: "", // 이미지는 아직 구현 못함 ㅠㅠ 알던 반칸 전송
+          boyImgUrl: e.target.boyImgUrl.value, // 이미지는 아직 구현 못함 ㅠㅠ 알던 반칸 전송
           girlBirthday: girlBirthday,
           girlName: e.target.girlName.value,
-          girlImgUrl: "",
+          girlImgUrl: e.target.girlImgUrl.value,
           meetAt: whenMeetAt,
           idImgUrl: "",
         },
@@ -99,8 +105,9 @@ function UserInFormation() {
         <div className="boy-div">
           <div className="boy">남자</div>
           <div className="boy-input-div">
-            <input type="text" name="boyName" value={forms.boyName} onChange={handleChange} placeholder="이름" required minLength={1}></input>
+            <input type="text" className="boyname-input" name="boyName" value={forms.boyName} onChange={handleChange} placeholder="이름" required minLength={1}></input>
             <DatePicker selected={boyBirthday} name="boybirthday" placeholderText="생년월일" onChange={(date) => setBoyBirthday(date)} locale={ko} dateFormat="yyyy.MM.dd" />
+            <input type="file" className="boyimg" accept="image/*" name="boyImgUrl" value={forms.boyImgUrl} onChange={handleChange}></input>
           </div>
         </div>
         <div className="girl-div">
@@ -108,6 +115,7 @@ function UserInFormation() {
           <div className="girl-input-div">
             <input type="text" name="girlName" value={forms.girlName} onChange={handleChange} placeholder="이름" required minLength={1}></input>
             <DatePicker selected={girlBirthday} name="girlbirthday" placeholderText="생년월일" onChange={(date) => setGirlBirthday(date)} locale={ko} dateFormat="yyyy.MM.dd" />
+            <input type="file" className="girlimg" accept="image/*" name="girlImgUrl" value={forms.girlImgUrl} onChange={handleChange}></input>
           </div>
         </div>
         <div className="last-input-div">
