@@ -37,14 +37,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .writePost-content-container{
     border: 1px solid #696969;
     background: #ffffff;
     margin:8%;
-    width:80%;
+    width:70%;
     padding:2%;
     padding-top:5%;
 }
