@@ -25,7 +25,7 @@ const EachPostData = ({ item, handleRemove, handleEdit }) => {
             <div className="post-grid">
                 <div className="post-content-container">
                     <Link
-                        to={`/home/photo/EachPost?${postId}`}
+                        to={`/home/photo/EachPost`}
                         state={{ selectedData: item}}
                     >                        
                         <div>

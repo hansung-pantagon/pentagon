@@ -156,7 +156,7 @@ const WritePost = () => {
                                 Add photo
                             <input 
                                 type='file'
-                                className="writePost-img"
+                                // className="writePost-img"
                                 id="imgUrl"
                                 name="imgUrl"
                                 accept=".jpg, .jpeg, .png" 
