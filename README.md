@@ -4,3 +4,4 @@
 # 실행 방법
 1. npm install
 2. npm start
+- 이외의 환경 설정은 필요없습니다.
