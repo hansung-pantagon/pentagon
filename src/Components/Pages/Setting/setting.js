@@ -6,14 +6,17 @@ const SetSetting = ( {userInfo} ) => {
     // nickname의 값이 바뀔때마다 화면에 리렌더링하면서 보여주기 위해 useState 사용
     const [edited, setEdited] = useState(userInfo);
 
+    const nowId = JSON.parse(window.sessionStorage.getItem("loginId"));
+
     // 로컬 스토리지에서 user 데이터 전부를 가져옴 (현재는 문자열의 형태)
     const getData = window.localStorage.getItem("user");
+    console.log(userInfo);
 
     // 바뀐 데이터를 로컬 스토리지에 저장하는 함수
     const handleSave = data => {
         const { id, pw, nickName, boyName, boyBirthday, boyImgUrl, girlName, girlBirthday, girlImgUrl, idImgUrl, meetAt } = data;
         
-        const editArray = JSON.parse(getData).map(row => data.id === "aaa@aaa.com" ? {
+        const editArray = JSON.parse(getData).map(row => data.id === nowId ? {
             id,
             pw,
             nickName,
@@ -56,14 +59,14 @@ const SetSetting = ( {userInfo} ) => {
                     <div className="setting">
                         <div>남자</div>
                         <div className ="setting-box">
-                            <div clssName>
+                            <div className>
                                 이름
                                 <div>{userInfo.boyName}</div>
                             </div>
                             <div>생년월일
-                                <div>{userInfo.boyBirthday}</div>
+                                <div>{userInfo.boyBirthday.substr(0, 10)}</div>
                             </div>
-                            <div>
+                            <div display="none">
                                 <img
                                     id="boyImg"
                                     src={userInfo.boyImgUrl}
@@ -78,19 +81,19 @@ const SetSetting = ( {userInfo} ) => {
                                 <div>{userInfo.girlName}</div>
                             </div>
                             <div>생년월일
-                                <div>{userInfo.girlBirthday}</div>
+                                <div>{userInfo.girlBirthday.substr(0, 10)}</div>
                             </div>
-                            <div>
+                            <div display="none">
                                 <img
-                                    id="boyImg"
-                                    src={userInfo.boyImgUrl}
+                                    id="girlImg"
+                                    src={userInfo.girlImgUrl}
                                     alt="이미지가 없습니다.">
                                 </img>
                             </div>
                         </div>
                     <div className = "info">
                         <div>사귄 날짜
-                            <div className="date">{userInfo.meetAt}</div>
+                            <div className="date">{userInfo.meetAt.substr(0, 10)}</div>
                         </div>
                         <div>닉네임
                             <input
