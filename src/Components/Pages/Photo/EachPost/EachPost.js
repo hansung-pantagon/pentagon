@@ -9,11 +9,6 @@ const EachPost = () => {
     console.log(location.state);
 
     const selectedData = location.state.selectedData;
-    const handleCancel = location.state.handleCancel;
-
-    const onCancel = () => {
-        handleCancel();
-    }
 
     return (
         <div className="writePost-container">
@@ -23,7 +18,7 @@ const EachPost = () => {
                 </div>
                 <div>
                     <Link to="/home/photo">
-                        <div className="cancel" onClick={onCancel}>
+                        <div className="cancel">
                             이전
                         </div>
                     </Link>

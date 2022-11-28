@@ -26,17 +26,11 @@ function App() {
     setPostitColor(postitColor);
   };
 
-  // useEffect(()=>{
-  //   console.log("app.js에서 ",leftColor) ;
-  //   console.log("app.js에서 ",rightColor);
-  // },[leftColor, rightColor])
-
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<StartScreenPage />} />
-          {/* <Route path="/:userID" element={<Home />} /> */}
 
           {/*중첩 라우터 */}
           <Route path="/home" element={<Home leftValue={leftColor} rightValue={rightColor} postitValue={postitColor} />}>

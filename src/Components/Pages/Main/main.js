@@ -10,7 +10,6 @@ const Main = () => {
     const idMeetAt = userMeetAt.substr(0, 10);
 
     const idImg = loggedInData[0].idImgUrl;
-    console.log(idImg);
 
     var now = new Date();
     var start = new Date(idMeetAt);
@@ -19,7 +18,7 @@ const Main = () => {
 
     return (
         <div className="CommonImg-container">
-            <img src={idImg} className="CommonImg"></img>
+            <img src={idImg} className="CommonImg" alt=""></img>
             <div className="comment">
                 만난지<br/> 
                 {day}일<br/> 

@@ -4,12 +4,12 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const Home = (props) => {
-  // console.log("home.js에서 props.postitValue : ", props.postitValue) //전달 성공 ㅎㅎ
-  // console.log("home.js에서 props.themeValue : ", props.themeValue)
+  //전달 성공 ㅎㅎ
+
   const [letterColor, setLetterColor] = useState("white");
   const [leftBorderStyle, setLeftBorderStyle] = useState("1px solid" + props.leftValue);
   const [rightBorderStyle, setRightBorderStyle] = useState("1px solid" + props.rightValue);
-  const [borderDotStyle, setBorderDotStyle] = useState("1px dashed white"); //dot
+  const [borderDotStyle, setBorderDotStyle] = useState("1px dashed white");
 
   useEffect(() => {
     if (props.postitValue !== "#298FA6") {
@@ -21,12 +21,12 @@ const Home = (props) => {
     setRightBorderStyle("1px solid " + props.rightValue);
   }, [props]);
 
-    //nickname, boyImg, girlImg 가져오기
+
     const localData = JSON.parse(localStorage.getItem("user"));
     const nowID = JSON.parse(window.sessionStorage.getItem("loginId"));
     const loggedInData = localData.filter(user => user.id === nowID);
     
-    //닉네임 가져오기
+
     const userNickName = loggedInData[0].nickName;
     //남자 이미지 가져오기
     const boyImg = loggedInData[0].boyImgUrl;
@@ -74,9 +74,6 @@ const Home = (props) => {
                   <Link style={{ background: props.postitValue, color: letterColor }} to="/home/photo">
                     사진
                   </Link>
-                  {/* <Link style={{ background: props.postitValue, color: letterColor }} to="/home/friend">
-                    친구
-                  </Link> */}
                   <Link style={{ background: props.postitValue, color: letterColor }} to="/home/anniversary">
                     기념일
                   </Link>
