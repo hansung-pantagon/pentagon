@@ -138,6 +138,6 @@ div > .right-box {
     cursor: pointer;
 }
 
-.theme-box div:focus{
-    border: 1px solid black;
+.theme-box div:hover{
+    border: 1px solid #767676;
 }
