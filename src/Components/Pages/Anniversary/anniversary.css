@@ -12,7 +12,7 @@
 .whitebox {
   border-radius: 10px;
   margin: 10px 10px 10px 10px;
-  height: 300px;
+  height: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,19 +24,23 @@
   width: 9.3%;
   height: 40px;
   background: url(icons8-하트-48.png);
+  margin:20px;
 }
 .firstday {
   text-align: center;
   width: 200px;
+  margin-bottom: 10px;
 }
 .day-show-div {
   display: flex;
 }
-.leftday {
+.leftday > .day {
   float: left;
+  margin : 20px;
 }
-.rightday > h3 {
-  margin-left: 20px;
+.rightday > .day {
+  margin: 20px;
+  float :right;
 }
 .line2 {
   width: 100%;

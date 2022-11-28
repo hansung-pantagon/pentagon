@@ -89,40 +89,40 @@ const anniversary = () => {
           </div>
         </div>
         <div className="day-show-div">
-          <div className="leftday">{day < 300 ? <h3>300days</h3> : <h3>500days</h3>}</div>
+          <div className="leftday">{day < 300 ? <div className = "day">300days</div> : <h4>500days</h4>}</div>
           <div className="rightday">
-            <h3>
-              {leaveday1}days left {fivehurdredDate}
-            </h3>
+            <div className="day">
+              {leaveday1} days left {fivehurdredDate}
+            </div>
           </div>
         </div>
         <div className="line2"></div>
         <div className="day-show-div">
-          <div className="leftday">{day < 300 ? <h3>400days</h3> : <h3>600days</h3>}</div>
+          <div className="leftday">{day < 300 ? <div className ="day">400days</div> : <h4>600days</h4>}</div>
           <div className="rightday">
-            <h3>
-              {leaveday2}days left {sixhurdredDate}
-            </h3>
+            <div className="day">
+              {leaveday2} days left {sixhurdredDate}
+            </div>
           </div>
         </div>
         <div className="line2"></div>
         <div className="day-show-div">
-          <div className="leftday">{day < 300 ? <h3>500days</h3> : <h3>600days</h3>}</div>
+          <div className="leftday">{day < 300 ? <div className="day">500days</div> : <h4>600days</h4>}</div>
           <div className="rightday">
-            <h3>
-              {leaveday3}days left {sevenhurdredDate}
-            </h3>
+            <div className="day">
+              {leaveday3} days left {sevenhurdredDate}
+            </div>
           </div>
         </div>
         <div className="line2"></div>
         <div className="day-show-div">
           <div className="leftday">
-            <h3>1000days</h3>
+            <div className="day">1000days</div>
           </div>
           <div className="rightday">
-            <h3>
-              {leaveday4}days left {thousandDate}
-            </h3>
+            <div className = "day">
+              {leaveday4} days left {thousandDate}
+            </div>
           </div>
         </div>
       </div>
