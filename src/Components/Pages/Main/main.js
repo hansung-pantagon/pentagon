@@ -1,6 +1,4 @@
 import React from 'react';
-import { useEffect, useState } from "react";
-import {isLogin, isOwner} from "../../../util/util";
 import './main.css'
 
 const Main = () => {
