@@ -21,6 +21,18 @@ const Home = (props) => {
     setRightBorderStyle("1px solid " + props.rightValue);
   }, [props]);
 
+    //nickname, boyImg, girlImg 가져오기
+    const localData = JSON.parse(localStorage.getItem("user"));
+    const nowID = JSON.parse(window.sessionStorage.getItem("loginId"));
+    const loggedInData = localData.filter(user => user.id === nowID);
+    
+    //닉네임 가져오기
+    const userNickName = loggedInData[0].nickName;
+    //남자 이미지 가져오기
+    const boyImg = loggedInData[0].boyImgUrl;
+    //여자 이미지 가져오기
+    const girlImg = loggedInData[0].girlImgUrl;
+
   return (
     <>
       <div className="bookcover">
@@ -31,13 +43,13 @@ const Home = (props) => {
                 <div className="bookcover-left-content">
                   <div className="userImg-container">
                     <div className="userImg">
-                      <div className="boyImg">남자 이미지 가져오기</div>
+                      <img className="boyImg" src={boyImg}></img>
                       <div className="connect-container">
                         <div className="connect"></div>
                         <div className="connect"></div>
                         <div className="connect"></div>
                       </div>
-                      <div className="girlImg">여자 이미지 가져오기</div>
+                      <img className="girlImg" src={girlImg}></img>
                     </div>
                   </div>
                 </div>
@@ -48,7 +60,7 @@ const Home = (props) => {
           <div className="bookcover-right" style={{ background: props.rightValue, border: rightBorderStyle }}>
             <div className="bookcover-right-dot">
               <div className="bookcover-right-white">
-                <div className="couple-name">OOOO의 홈피</div>
+                <div className="couple-name">{userNickName} 의 홈피</div>
                 <div className="bookcover-right-content">
                   <Outlet />
                 </div>
