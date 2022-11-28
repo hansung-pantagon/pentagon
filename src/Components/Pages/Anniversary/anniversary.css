@@ -9,7 +9,7 @@
     border-radius: 30px;
   } */
   
-.whitebox{
+  .whitebox{
     border-radius: 10px;
     margin: 10px 10px 10px 10px;
     height: 480px;
@@ -67,7 +67,7 @@
   width: 40%;
   height: 10%;
   left: 60%;
-  top: -9%;
+  top: -10%;
 
   font-family: "DungGeunMo";
   font-style: normal;
@@ -93,7 +93,7 @@
     width: 40%;
     /* height: 30%; */
     left: -5%;
-    top: -7%;
+    top: -13%;
 
     font-family: "DungGeunMo";
     font-style: normal;
@@ -110,7 +110,7 @@
   width: 40%;
   height: 10%;
   left: 60%;
-  top: -18%;
+  top: -26%;
 
   font-family: "DungGeunMo";
   font-style: normal;
@@ -136,7 +136,7 @@
   width: 40%;
   /* height: 30%; */
   left: -5%;
-  top: -15%;
+  top: -28%;
 
   font-family: "DungGeunMo";
   font-style: normal;
@@ -153,7 +153,7 @@
   width: 40%;
   height: 10%;
   left: 60%;
-  top: -26%;
+  top: -41%;
 
   font-family: "DungGeunMo";
   font-style: normal;
@@ -169,7 +169,7 @@
   position: relative;
   width: 95%;
   left: 2.5%;
-  top: -6%;
+  top: -13%;
 
   border: 1px solid #616161;
 
@@ -180,7 +180,7 @@
   width: 40%;
   /* height: 30%; */
   left: -5%;
-  top: -23%;
+  top: -43%;
 
   font-family: "DungGeunMo";
   font-style: normal;
@@ -197,7 +197,7 @@
   width: 40%;
   height: 10%;
   left: 60%;
-  top: -34%;
+  top: -56%;
 
 
   font-family: "DungGeunMo";
@@ -214,7 +214,7 @@
   position: relative;
   width: 95%;
   left: 2.5%;
-  top: -14%;
+  top: -28%;
 
   border: 1px solid #616161;
 }
