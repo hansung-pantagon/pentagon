@@ -10,18 +10,14 @@ const Post = () => {
     const [info, setInfo] = useState([]);
     const [selected, setSelected] = useState("");
 
-    const loggedIn = window.sessionStorage.getItem("loginId");
     const getData = window.localStorage.getItem("post");
 
     useEffect(() => {
-        console.log("rendering");
-        console.log(JSON.parse(getData));
-        window.sessionStorage.setItem("loginId", "a");
         let post = JSON.parse(getData);
         if (!post) {
             post = [];
         }
-        window.sessionStorage.getItem("loggedIn");
+        window.sessionStorage.getItem("loginId");
 
         console.log(post);
         setInfo(post);
