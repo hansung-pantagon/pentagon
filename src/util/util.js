@@ -13,6 +13,7 @@ export const isLogin = () => {
     return nowId;
 }
 
+//loginId 인자로 받아서 로컬에서 찾아서 return 해주기
 export const isOwner = () => {
     if (!isLogin) {
         return;
