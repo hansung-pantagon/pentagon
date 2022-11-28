@@ -4,33 +4,30 @@ import {isLogin, isOwner} from "../../../util/util";
 import './main.css'
 
 const Main = () => {
-    const [loginInfo, setLoginInfo] = useState([]);
-    const [nowLoginInfo, setNowLoginInfo] = useState([]);
+    const localData = JSON.parse(localStorage.getItem("user"));
+    const nowID = JSON.parse(window.sessionStorage.getItem("loginId"));
+    const loggedInData = localData.filter(user => user.id === nowID);
     
-    const nowId = JSON.parse(sessionStorage.getItem("loginId"));
-    console.log("세션에서 가져온 로그인한 id ", nowId);
+    //사귄 날짜 가져오기
+    const userMeetAt = loggedInData[0].meetAt;
+    const idMeetAt = userMeetAt.substr(0, 10);
 
-    
-    
-      
-    useEffect(() => {
-        console.log("1 로컬에서 가져온 모든 정보 ", loginInfo);
-        setLoginInfo(JSON.parse(localStorage.getItem("user")).find((user)=> user?.id === nowId));
-        
-        
-    }, []);
+    //공동 이미지 가져오기
+    const idImg = loggedInData[0].idImgUrl;
+    console.log(idImg);
 
-    //console.log("로컬에서 찾은 id의 정보들", nowLoginInfo);
-
-    console.log("2 로컬에서 가져온 모든 정보 ", loginInfo);
-
+    //사귄 날짜 계산
+    var now = new Date();
+    var start = new Date(idMeetAt);
+    var timeDiff = now.getTime() - start.getTime();
+    var day = Math.floor(timeDiff / (1000 * 60 * 60 * 24) + 1);
 
     return (
         <div className="CommonImg-container">
-            <div className="CommonImg">//img가져오기</div>
+            <img src={idImg} className="CommonImg"></img>
             <div className="comment">
                 만난지<br/> 
-                365일<br/> 
+                {day}일<br/> 
                 된 날
             </div>
             
