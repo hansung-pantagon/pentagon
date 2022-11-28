@@ -56,7 +56,7 @@ const SetSetting = ( {userInfo} ) => {
                     <div className="setting">
                         <div>남자</div>
                         <div className ="setting-box">
-                            <div>
+                            <div clssName>
                                 이름
                                 <div>{userInfo.boyName}</div>
                             </div>
@@ -90,7 +90,7 @@ const SetSetting = ( {userInfo} ) => {
                         </div>
                     <div className = "info">
                         <div>사귄 날짜
-                            <div>{userInfo.meetAt}</div>
+                            <div className="date">{userInfo.meetAt}</div>
                         </div>
                         <div>닉네임
                             <input
@@ -103,7 +103,7 @@ const SetSetting = ( {userInfo} ) => {
                         </div>
                     </div>
                 </div>
-            <button type="submit">설정</button>
+            <button id ="settingbtn" type="submit">설정</button>
             </form>
         </>
     );

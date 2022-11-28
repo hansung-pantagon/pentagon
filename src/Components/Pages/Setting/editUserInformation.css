@@ -15,6 +15,9 @@ div > .left-box {
     font-weight: bolder;
     background: #ffffff;
     border-radius : 0%;
+    border-top : 0px;
+    border-left : 0px;
+    border-right : 0px;
     border-bottom : 1px solid 
     #D9D9D9;
     margin-top : 7%;
@@ -25,7 +28,7 @@ div > .left-box {
 }
 div > .right-box {
     width: 65%;
-    height: 24em;
+    height: 24.3em;
     float : right;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -37,19 +40,22 @@ div > .right-box {
     font-size : 1em;
     text-align: center;
     font-weight: bold;
-    margin: 20px 0px 10px 8px;
+    margin: 10px 0px 15px 8px;
     }
-.right-box > button {
+#settingbtn {
     font-family: "DungGeunMo";
     font-weight: bold;
     text-align: center;
     width: 8em;
-    height: 3em;
+    height: 2.7em;
     background: #D9D9D9;
     border-radius: 10px;
     border: 0;
-    margin: 30px auto;
+    margin: auto;
     display: block;
+}
+#settingbtn:active {
+    background-color: rgba(237, 237, 237, 0.5);
 }
 .setting > div {
     width: 86%;
@@ -70,12 +76,11 @@ div > .right-box {
     font-family: "DungGeunMo";
     font-size: 0.9em;
     font-weight: normal;
-    margin: 10px 5px 10px 0px;
+    margin: 10px 5px 7px 0px;
 }
-.setting-box > div >  input {
+.setting-box > div > div {
     font-family: "DungGeunMo";
     width: 60%;
-    height: 1em;
     border: 1px solid #767676;
     filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
     border-radius: 10px;
@@ -85,15 +90,24 @@ div > .right-box {
 .info > div{
     font-family: "DungGeunMo";
     font-size: 0.88em;
-    margin: 5px 0px 0px 5px;
+    margin: 5px 0px 10px 5px;
     font-weight: normal;
     filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
-    float : left;
+}
+.info> div> .date{
+    width: 60%;
+    font-family: "DungGeunMo";
+    border: 1px solid #767676;
+    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
+    border-radius: 10px;
+    float: right;
+    text-align: center;
+    margin: 0px 0px 8px 4px;
 }
 .info > div > input {
     font-family: "DungGeunMo";
     width: 57%;
-    height: 0.95em;
+    height: 0.8em;
     border: 1px solid #767676;
     filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
     border-radius: 10px;
@@ -105,21 +119,21 @@ div > .right-box {
     text-align: left;
     font-weight: bold;
     font-family: "DungGeunMo";
-    margin: 10px;
+    margin: 13px;
     font-size : 0.8em;
 }
 .theme-box{
-    height: 6em;
+    height: 5.5em;
     width: 86%;
     border: 1px solid #767676;
     filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
     border-radius: 10px;
 }
 .theme-box > div {
-    margin: 15% 0% 0% 3%;
+    margin: 10% 0% 0% 3%;
     float : left;
     width : 13%;
-    height : 33%;
+    height : 37%;
     border-radius: 50%;
     cursor: pointer;
 }

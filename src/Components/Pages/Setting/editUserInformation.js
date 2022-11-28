@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import './editUserInformation.css';
 import SetSetting from './setting';
 import SetTheme from './setTheme';
+import { useNavigate } from 'react-router-dom';
 
 function EditUserInformation (props) {
-
+    const navigate = useNavigate();
     const users = [];
 
     const dummyData = {
@@ -25,7 +26,7 @@ function EditUserInformation (props) {
 
     window.localStorage.setItem("user", JSON.stringify(users));
 
-    const [content, setContent] = useState(false);
+    const [content, setContent] = useState(true);
     // SetSetting 컴포넌트에 넘겨줄 데이터 정의
 
     const [leftColor, setleftColor] =useState("#47ACC2");
@@ -53,7 +54,16 @@ function EditUserInformation (props) {
         // console.log("editUserInformation에서 ",rightColor);
         props.giveColorValue(leftColor,rightColor, postitColor);
     }
-
+    const logout = () => {
+        if (window.confirm('정말 로그아웃 하시겠습니까?')) {
+            alert('로그아웃 되었습니다.');
+            navigate("/SignUpInPage");
+            window.sessionStorage.removeItem("loginId");
+            window.sessionStorage.removeItem("loginPw");
+        }
+        else{
+        }
+    }
     return (
         <>
             <div>
@@ -64,10 +74,7 @@ function EditUserInformation (props) {
                     <button onClick={() => setContent(false)}>
                         테마
                     </button>
-                    <button onClick={()=>setContent(false)}>
-                        공유하기
-                    </button>
-                    <button onClick={()=>setContent(false)}>
+                    <button onClick={()=>logout()}>
                         로그아웃
                     </button>
                 </div>
