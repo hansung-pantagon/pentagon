@@ -42,22 +42,25 @@
   position: relative;
 }
 .startscreen-div {
-  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 550px;
   height: 450px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgb(0 0 0 / 30%);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 .title-name {
-  font-size: 50px;
-  padding: 120px;
+  width: 350px;
+  height: 350px;
+  background: url(../../../image/newtitleimg.png);
+  background-size: 350px;
+}
+.title-content {
+  font-size: 25px;
+  margin: 10px;
 }
 .notfound-container {
   font-size: 3em;
@@ -65,9 +68,11 @@
 }
 .go-bt {
   font-family: "DungGeunMo";
-  background: #d9d9d9;
+  font-size: 35px;
+  background-color: #47acc2;
   border-radius: 10px;
   border: 0;
   width: 130px;
   height: 40px;
+  margin: 10px;
 }
