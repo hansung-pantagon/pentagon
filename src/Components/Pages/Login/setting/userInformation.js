@@ -41,23 +41,26 @@ function UserInFormation() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    alert(`${signUpId} 님 회원가입 완료.`);
-    navigate("/signUpInPage/", {
-      state: {
-        id: signUpId,
-        pw: signUpPw,
-        nickName: e.target.nickName.value,
-        boyBirthday: boyBirthday,
-        boyName: e.target.boyName.value,
-        boyImgUrl: URL.createObjectURL(document.getElementById("boyImgUrl").files[0]),
-        girlBirthday: girlBirthday,
-        girlName: e.target.girlName.value,
-        girlImgUrl: URL.createObjectURL(document.getElementById("girlImgUrl").files[0]),
-        meetAt: whenMeetAt,
-        idImgUrl: URL.createObjectURL(document.getElementById("idImgUrl").files[0]),
-      },
-    });
+    if (document.getElementById("boyImgUrl").files[0] === undefined || document.getElementById("girlImgUrl").files[0] === undefined || document.getElementById("idImgUrl").files[0] === undefined) {
+      alert("사진을 전부 추가해주세요");
+    } else {
+      alert(`${signUpId} 님 회원가입 완료.`);
+      navigate("/signUpInPage/", {
+        state: {
+          id: signUpId,
+          pw: signUpPw,
+          nickName: e.target.nickName.value,
+          boyBirthday: boyBirthday,
+          boyName: e.target.boyName.value,
+          boyImgUrl: URL.createObjectURL(document.getElementById("boyImgUrl").files[0]),
+          girlBirthday: girlBirthday,
+          girlName: e.target.girlName.value,
+          girlImgUrl: URL.createObjectURL(document.getElementById("girlImgUrl").files[0]),
+          meetAt: whenMeetAt,
+          idImgUrl: URL.createObjectURL(document.getElementById("idImgUrl").files[0]),
+        },
+      });
+    }
     setForms({
       id: "",
       pw: "",
