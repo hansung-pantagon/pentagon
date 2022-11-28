@@ -53,7 +53,6 @@ const SetTheme = (props) => {
                     <div>사진첩 왼쪽</div>
                     <div className ="theme-box">
                         {themeColorList.map(color => <div key={color.id} style= {{background:color.color}} onClick={leftChangeHandler}></div>)}
-                        
                     </div>
                 </div>
                 <div className="theme">
@@ -69,7 +68,7 @@ const SetTheme = (props) => {
                         {postItColorList.map(color => <div key={color.id} style= {{background:color.color}} onClick={postItChangeHandler}></div>)}
                     </div>
                 </div>
-            <button>설정</button>
+            <button id = "settingbtn">설정</button>
         </form>
         </>
     )
