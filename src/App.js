@@ -2,7 +2,6 @@ import "./App.css";
 import Home from "./Home";
 import Main from "./Components/Pages/Main/main";
 import Photo from "./Components/Pages/Photo/Post/Post";
-import Friend from "./Components/Pages/Friend/searchFriend";
 import Anniversary from "./Components/Pages/Anniversary/anniversary";
 import Setting from "./Components/Pages/Setting/editUserInformation";
 import WritePost from "./Components/Pages/Photo/WritePost/WritePost";
@@ -47,7 +46,6 @@ function App() {
             <Route path="photo/eachPost" element={<EachPost />} />
             <Route path="photo/editPost" element={<EditPost />} />
             <Route path="photo/:postId" element={<EachPost />} />
-            <Route path="friend" element={<Friend />} />
             <Route path="anniversary" element={<Anniversary />} />
             <Route path="setting" element={<Setting giveColorValue={giveColorValue} />} />
           </Route>

@@ -3,19 +3,14 @@ import React from "react";
 import { FaRegTrashAlt, FaRegEdit } from "react-icons/fa"
 import { Link } from "react-router-dom";
 
-/**
- * 화면 위 테이블에 정보를 보여주는 컴포넌트
- */
-
 const EachPostData = ({ item, handleRemove, handleEdit }) => {
 
     const { postId, imgUrl, content, dateAt } = item;
-    // 데이터 삭제
+
     const onRemove = () => {
-        handleRemove(postId);  // postId
+        handleRemove(postId);
     }
 
-    // 데이터 편집
     const onEdit = () => {
         handleEdit(item);
     }

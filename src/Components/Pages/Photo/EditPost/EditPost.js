@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./EditPost.css"
 
-const loggedIn = "1";
 
 const EditPost = () => {
     const getData = window.localStorage.getItem("post");
@@ -10,6 +9,7 @@ const EditPost = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const selectedData = location.state.selectedData;
+    const loggedIn = window.sessionStorage.getItem("loginId");
 
     const [info, setInfo] = useState([]);
     const [edited, setEdited] = useState(selectedData);
@@ -32,19 +32,20 @@ const EditPost = () => {
         console.log(data);
         
         if (!!postId) {
-            const editArray = JSON.parse(getData).map(row => data.postId === row.postId ? {
-                postId,
-                id: loggedIn,
-                imgUrl,
-                content,
-                dateAt
-            } : row)
+            const editArray = JSON.parse(getData).map(row => 
+                data.postId === row.postId ? {
+                    postId,
+                    id: loggedIn,
+                    imgUrl,
+                    content,
+                    dateAt
+                } : row)
             setInfo(editArray)
             console.log(editArray);
             window.localStorage.setItem("post", JSON.stringify(editArray));
         } else {
             console.log(info);
-            
+
             setInfo( info => info.concat({
                 id: loggedIn,
                 imgUrl,

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import AddButton from '../images/addButton.png';
 import { Link } from "react-router-dom";
 import PostData from "./PostData";
-// import WritePost from "../writePost/WritePost";
 import './Post.css'
 
 
@@ -19,7 +18,6 @@ const Post = () => {
         }
         window.sessionStorage.getItem("loginId");
 
-        console.log(post);
         setInfo(post);
     }, []);
 
@@ -43,11 +41,8 @@ const Post = () => {
             content,
             dateAt,
         };
-        console.log(selectedData);
         setSelected(selectedData);
     };
-
-    console.log(selected);
 
     return (
         <div className="post-container">

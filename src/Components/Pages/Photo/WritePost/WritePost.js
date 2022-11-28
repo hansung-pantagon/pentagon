@@ -1,15 +1,13 @@
 import React, { useState, useRef } from 'react';
 import { Link, useNavigate } from "react-router-dom";
-import { GrGallery } from "react-icons/gr";
 import './WritePost.css';
 
-// const loggedIn = window.sessionStorage.getItem("loggedId");
-const loggedIn = "1";
 
 const WritePost = () => {
     const navigate = useNavigate();
 
     const getData = window.localStorage.getItem("post");
+    const loggedIn = window.sessionStorage.getItem("loginId");
 
     const [imageSrc, setImageSrc] = useState('');
     const [info, setInfo] = useState([]);
@@ -54,10 +52,7 @@ const WritePost = () => {
             } : row)
             window.localStorage.setItem("post", JSON.stringify(editArray));
             setInfo(editArray);
-            console.log(editArray);
         } else {
-            console.log(info);
-            
             const newData = {
                 postId: nextPostId.current,
                 id: loggedIn,
@@ -65,7 +60,6 @@ const WritePost = () => {
                 content,
                 dateAt
             }
-            console.log(newData);
 
             setInfo( info => info.concat({
                 postId: nextPostId.current,
@@ -77,7 +71,6 @@ const WritePost = () => {
             data.postId = nextPostId.current;
             nextPostId.current += 1;
             storeLocal("post", data);
-            console.log("여기도 출력?");
         }
     }
 
@@ -86,7 +79,6 @@ const WritePost = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         const files = e.target.files;
-        console.log(imgInfo);
         if (!!files) {
             setImageSrc(URL.createObjectURL(files[0]));
         }
@@ -107,7 +99,6 @@ const WritePost = () => {
         }
         e.preventDefault();
         handleSave(form);
-
         navigate(`/home/photo`);
     }
 
@@ -131,8 +122,6 @@ const WritePost = () => {
                         <Link to="/home/photo">
                             <div className="cancel">취소</div>
                         </Link>
-                        
-                        {/*글 작성 처리*/}
                         <div className="upload">
                             <button 
                                 className="saveBtn" 
@@ -148,7 +137,6 @@ const WritePost = () => {
                         <div>
                             <input 
                                 type='file'
-                                // className="writePost-img"
                                 id="imgUrl"
                                 name="imgUrl"
                                 accept=".jpg, .jpeg, .png" 
@@ -159,12 +147,9 @@ const WritePost = () => {
                         <div>
                             <div className="writePost-img">
                                 <label htmlFor="imgUrl">
-                                    {/* <GrGallery />
-                                        Add photo */}
                                     <div className="preview">
                                         {imageSrc && <img src={imageSrc} alt="preview-img" className="uploadIMG" />}
                                     </div>
-                                    {/* <img id="view" src="" alt=""></img> */}
                                 </label>
                             </div>
                         </div>

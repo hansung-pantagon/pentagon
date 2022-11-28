@@ -8,15 +8,12 @@ const Main = () => {
     const nowID = JSON.parse(window.sessionStorage.getItem("loginId"));
     const loggedInData = localData.filter(user => user.id === nowID);
     
-    //사귄 날짜 가져오기
     const userMeetAt = loggedInData[0].meetAt;
     const idMeetAt = userMeetAt.substr(0, 10);
 
-    //공동 이미지 가져오기
     const idImg = loggedInData[0].idImgUrl;
     console.log(idImg);
 
-    //사귄 날짜 계산
     var now = new Date();
     var start = new Date(idMeetAt);
     var timeDiff = now.getTime() - start.getTime();
