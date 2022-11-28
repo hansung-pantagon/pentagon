@@ -70,9 +70,10 @@ function StartScreenPage() {
         </div>
         <div className="right-div">
           <div className="startscreen-div">
-            <div className="title-name">♥커플 월드♥</div>
+            <div className="title-name"></div>
+            <div className="title-content">추억을 기록하세요</div>
             <Link to="/signUpInPage">
-              <button className="go-bt">GO</button>
+              <button className="go-bt">GO!</button>
             </Link>
           </div>
         </div>
