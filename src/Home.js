@@ -10,8 +10,6 @@ const Home = (props) => {
   const [leftBorderStyle, setLeftBorderStyle] = useState("1px solid" + props.leftValue);
   const [rightBorderStyle, setRightBorderStyle] = useState("1px solid" + props.rightValue);
   const [borderDotStyle, setBorderDotStyle] = useState("1px dashed white"); //dot
-  const navigate = useNavigate();
-  const getLoginId = JSON.parse(sessionStorage.getItem("loginId"));
 
   useEffect(() => {
     if (props.postitValue !== "#298FA6") {
@@ -22,15 +20,6 @@ const Home = (props) => {
     setLeftBorderStyle("1px solid " + props.leftValue);
     setRightBorderStyle("1px solid " + props.rightValue);
   }, [props]);
-
-  // 로그인 검증
-  useEffect(() => {
-    if (getLoginId !== null) {
-      return;
-    } else if (getLoginId === null) {
-      navigate("/signUpInPage");
-    }
-  }, []);
 
   return (
     <>
