@@ -136,7 +136,7 @@ body{
 /*유저 사진*/
 .userImg-container{
     text-align: center;
-    margin:10%;
+    margin:1%;
     display: flex;
     justify-content: center;
     align-items:center;
