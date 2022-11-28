@@ -66,11 +66,11 @@ const SetSetting = ( {userInfo} ) => {
                             <div>생년월일
                                 <div>{userInfo.boyBirthday.substr(0, 10)}</div>
                             </div>
-                            <div display="none">
+                            <div>
                                 <img
                                     id="boyImg"
                                     src={userInfo.boyImgUrl}
-                                    alt="이미지가 없습니다.">
+                                    alt="이미지가 없습니다." style= {{display : 'none'}}>
                                 </img>
                             </div>
                         </div>
@@ -83,11 +83,11 @@ const SetSetting = ( {userInfo} ) => {
                             <div>생년월일
                                 <div>{userInfo.girlBirthday.substr(0, 10)}</div>
                             </div>
-                            <div display="none">
+                            <div>
                                 <img
                                     id="girlImg"
                                     src={userInfo.girlImgUrl}
-                                    alt="이미지가 없습니다.">
+                                    alt="이미지가 없습니다." style= {{display : 'none'}}>
                                 </img>
                             </div>
                         </div>
