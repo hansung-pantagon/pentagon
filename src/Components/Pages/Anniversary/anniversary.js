@@ -85,11 +85,11 @@ const anniversary = () => {
             <img src="{heart}"/></div> */}
         <div className="firstday">
           <div>
-            우리 함께한 지{day} days since {firstday}
+            우리 함께한 지 "{day}" days since {firstday}
           </div>
         </div>
         <div className="day-show-div">
-          <div className="leftday">{day < 300 ? <div className = "day">300days</div> : <h4>500days</h4>}</div>
+          <div className="leftday">{day < 300 ? <div className = "day">300days</div> : <div className = "day">500days</div>}</div>
           <div className="rightday">
             <div className="day">
               {leaveday1} days left {fivehurdredDate}
@@ -98,7 +98,7 @@ const anniversary = () => {
         </div>
         <div className="line2"></div>
         <div className="day-show-div">
-          <div className="leftday">{day < 300 ? <div className ="day">400days</div> : <h4>600days</h4>}</div>
+          <div className="leftday">{day < 300 ? <div className ="day">400days</div> : <div className = "day">600days</div>}</div>
           <div className="rightday">
             <div className="day">
               {leaveday2} days left {sixhurdredDate}
@@ -107,7 +107,7 @@ const anniversary = () => {
         </div>
         <div className="line2"></div>
         <div className="day-show-div">
-          <div className="leftday">{day < 300 ? <div className="day">500days</div> : <h4>600days</h4>}</div>
+          <div className="leftday">{day < 300 ? <div className="day">500days</div> : <div className = "day">600days</div>}</div>
           <div className="rightday">
             <div className="day">
               {leaveday3} days left {sevenhurdredDate}

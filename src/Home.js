@@ -74,9 +74,9 @@ const Home = (props) => {
                   <Link style={{ background: props.postitValue, color: letterColor }} to="/home/photo">
                     사진
                   </Link>
-                  <Link style={{ background: props.postitValue, color: letterColor }} to="/home/friend">
+                  {/* <Link style={{ background: props.postitValue, color: letterColor }} to="/home/friend">
                     친구
-                  </Link>
+                  </Link> */}
                   <Link style={{ background: props.postitValue, color: letterColor }} to="/home/anniversary">
                     기념일
                   </Link>
