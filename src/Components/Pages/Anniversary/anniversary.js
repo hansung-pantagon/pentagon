@@ -15,7 +15,6 @@ import "./anniversary.css";
 //         return; // 로그인 화면으로 되돌아가도록
 //     }
 
-//     const localData = JSON.parse(localStorage.getItem("user"));
 //         const nowLoggedIn = localData.filter(item => item.id == nowId);
 
 //         console.log(nowLoggedIn);
@@ -23,43 +22,15 @@ import "./anniversary.css";
 // }
 
 const anniversary = () => {
-    const signup = 
-    [
-        // 계정1
-        {
-            "id": "String",
-            "pw": "String",
-            "nickname": "String",
-            "boy": { 
-                "birthday": "YYYY-MM-dd", 
-                "name": "String",
-                "imgUrl": "String"
-            },
-            "girl": {
-                "birthday": "YYYY-MM-dd", 
-                "name": "String",
-                "imgUrl": "String"
-            },
-            "meetAt": "YYYY-MM-dd", //사귄 날
-            "idImgUrl": "String"  //메인 화면에 들어가는 공통사진
-        },
-        // 계정2
-        {
-            "id": "Number",
-            "pw": "String",
-            "nickName": "String",
-            "boy": { 
-                "birthday": "YYYY-MM-dd", 
-                "name": "String" 
-            },
-            "girl": {
-                "birthday": "YYYY-MM-dd", 
-                "name": "String"
-            },
-            "meetAt": "YYYY-MM-dd",
-            "idImgUrl": "String"  //메인 화면에 들어가는 공통사진
-        },
-    ]
+    
+    const localData = JSON.parse(localStorage.getItem("user"));
+    const nowID = JSON.parse(window.sessionStorage.getItem("loginId"));
+    console.log(nowID);
+    const loggedInData = localData.filter(user => user.id === nowID);
+    const userMeetAt = loggedInData[0].meetAt;
+    console.log(userMeetAt);
+
+    // const 
     
     // const [loginInfo, setLoginInfo] = useState([]);
     // const [nowLoginInfo, setNowLoginInfo] = useState([]);
