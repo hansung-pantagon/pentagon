@@ -21,7 +21,6 @@ function Login() {
 
   useEffect(() => {
     // navigate으로 가져온 user 정보를 localstorage에 저장하는 useEffect
-    // 왜 여기서 저장함? => navigate 쓰면 localstorage에 저장안되고 라우팅되서 젤 마지막 페이지인 login에 user정보 다 옮겨옴
     if (localInfo === []) {
       setLocalInfo([location.state]);
     } else if (location.state !== null) {
@@ -46,7 +45,7 @@ function Login() {
     if (localInfo.find((user) => user?.id === id && user?.pw === pw)) {
       sessionStorage.setItem("loginId", JSON.stringify(id));
       sessionStorage.setItem("loginPw", JSON.stringify(pw));
-      navigate("/");
+      navigate("/home");
     } else {
       alert("로그인 실패");
       navigate("/signUpInPage");
