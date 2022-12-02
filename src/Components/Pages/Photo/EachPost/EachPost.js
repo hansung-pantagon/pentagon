@@ -5,9 +5,6 @@ import './EachPost.css';
 const EachPost = () => {
     const location = useLocation();
 
-    console.log(location);
-    console.log(location.state);
-
     const selectedData = location.state.selectedData;
 
     return (
