@@ -7,8 +7,6 @@ function Login() {
   const navigate = useNavigate();
   const location = useLocation();
   const [localInfo, setLocalInfo] = useState(() => {
-    // localStorage에 저장하는 useState
-    // 새로고침을 하고 setitem을 했을때, localstorage 값 유지
     if (typeof window !== "undefined") {
       const saved = window.localStorage.getItem("user");
       if (saved !== null) {
@@ -20,17 +18,14 @@ function Login() {
   });
 
   useEffect(() => {
-    // navigate으로 가져온 user 정보를 localstorage에 저장하는 useEffect
     if (localInfo === []) {
       setLocalInfo([location.state]);
     } else if (location.state !== null) {
-      // localstorage에 값이 있을때 새로운 user 값을 concat으로 연결
       setLocalInfo(localInfo.concat(location.state));
     }
   }, []);
 
   useEffect(() => {
-    // localstorage의 값을 실시간으로 감지해서 저장시켜주기 위한 useEffect, 없으면 저장이 밀림
     if (localInfo?.length === 0) {
       return;
     }
@@ -38,7 +33,6 @@ function Login() {
   }, [localInfo]);
 
   const checkIdPw = (e) => {
-    // 로그인 검증 함수
     e.preventDefault();
     const id = e.target.id.value;
     const pw = e.target.pw.value;
