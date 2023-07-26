@@ -8,7 +8,7 @@ import WritePost from "./Components/Pages/Photo/WritePost/WritePost";
 import EachPost from "./Components/Pages/Photo/EachPost/EachPost";
 import EditPost from "./Components/Pages/Photo/EditPost/EditPost";
 import NotFound from "./NotFound";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter as BrowserRouter, Route, Routes } from "react-router-dom";
 import SignUpInPage from "./Components/Pages/Login/SignUpInPage";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
