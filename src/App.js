@@ -8,7 +8,7 @@ import WritePost from "./Components/Pages/Photo/WritePost/WritePost";
 import EachPost from "./Components/Pages/Photo/EachPost/EachPost";
 import EditPost from "./Components/Pages/Photo/EditPost/EditPost";
 import NotFound from "./NotFound";
-import { HashRouter as BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import SignUpInPage from "./Components/Pages/Login/SignUpInPage";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<StartScreenPage />} />
 
@@ -46,7 +46,7 @@ function App() {
           <Route path="/signUpInPage/*" element={<SignUpInPage />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
