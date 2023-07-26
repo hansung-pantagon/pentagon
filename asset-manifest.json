@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.f8dd0faa.css",
-    "main.js": "/static/js/main.b8b2d90c.js",
-    "static/js/787.c81e4d81.chunk.js": "/static/js/787.c81e4d81.chunk.js",
-    "static/media/DungGeunMo.ttf": "/static/media/DungGeunMo.1ebba65b2b010a1e45d7.ttf",
-    "static/media/newtitleimg.png": "/static/media/newtitleimg.85728bae5e825e38ee94.png",
-    "index.html": "/index.html",
-    "main.f8dd0faa.css.map": "/static/css/main.f8dd0faa.css.map",
-    "main.b8b2d90c.js.map": "/static/js/main.b8b2d90c.js.map",
-    "787.c81e4d81.chunk.js.map": "/static/js/787.c81e4d81.chunk.js.map"
+    "main.css": "/pentagon/static/css/main.8ce1ff55.css",
+    "main.js": "/pentagon/static/js/main.0cc42cbf.js",
+    "static/js/787.c81e4d81.chunk.js": "/pentagon/static/js/787.c81e4d81.chunk.js",
+    "static/media/DungGeunMo.ttf": "/pentagon/static/media/DungGeunMo.1ebba65b2b010a1e45d7.ttf",
+    "static/media/newtitleimg.png": "/pentagon/static/media/newtitleimg.85728bae5e825e38ee94.png",
+    "index.html": "/pentagon/index.html",
+    "main.8ce1ff55.css.map": "/pentagon/static/css/main.8ce1ff55.css.map",
+    "main.0cc42cbf.js.map": "/pentagon/static/js/main.0cc42cbf.js.map",
+    "787.c81e4d81.chunk.js.map": "/pentagon/static/js/787.c81e4d81.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8dd0faa.css",
-    "static/js/main.b8b2d90c.js"
+    "static/css/main.8ce1ff55.css",
+    "static/js/main.0cc42cbf.js"
   ]
 }
